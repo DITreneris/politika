@@ -1,0 +1,222 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Prompt Pagrindai",
+      "subtitle": "Meta, Input ir Output blokai",
+      "description": "Išmokite pagrindinius prompt struktūros blokus su verslo pavyzdžiais",
+      "icon": "Target",
+      "slides": [
+        {
+          "id": 1,
+          "title": "Įvadas",
+          "subtitle": "Apie mokymą ir 6 blokų sistemą",
+          "type": "intro"
+        },
+        {
+          "id": 2,
+          "title": "Hierarchinė Struktūra",
+          "subtitle": "6 blokų sistema nuo svarbiausio iki papildomų parametrų",
+          "type": "hierarchy"
+        },
+        {
+          "id": 3,
+          "title": "Meta Blokas",
+          "subtitle": "Rolė ir kontekstas - kas esate ir ką darote?",
+          "type": "meta",
+          "practicalTask": {
+            "title": "Praktinė užduotis: Sukurkite Meta bloką",
+            "placeholder": "Jūs esate [rolė] su [patirtis] [srityje]. Jūsų tikslas..."
+          }
+        },
+        {
+          "id": 4,
+          "title": "Input Blokas",
+          "subtitle": "Faktinė informacija, duomenys ir apribojimai",
+          "type": "input",
+          "practicalTask": {
+            "title": "Praktinė užduotis: Aprašykite Input duomenis",
+            "placeholder": "Duomenys: [skaičiai, faktai, datos]..."
+          }
+        }
+      ],
+      "businessExamples": [
+        {
+          "title": "Pardavimų ataskaita",
+          "description": "Q3 2024 pardavimų analizė su konkretiais skaičiais"
+        },
+        {
+          "title": "Klientų analizė",
+          "description": "Segmentacija ir elgesio analizė"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Mąstymo Struktūra",
+      "subtitle": "Output, Reasoning ir Quality Control",
+      "description": "Išmokite struktūruoti AI mąstymą ir kokybės kontrolę",
+      "icon": "Brain",
+      "slides": [
+        {
+          "id": 5,
+          "title": "Output Blokas",
+          "subtitle": "Rezultato formatas ir struktūros reikalavimai",
+          "type": "output",
+          "practicalTask": {
+            "title": "Praktinė užduotis: Aprašykite Output formatą",
+            "placeholder": "Formatas: [lentelė/tekstas/sąrašas]..."
+          }
+        },
+        {
+          "id": 6,
+          "title": "Reasoning Blokas",
+          "subtitle": "Mąstymo struktūra prieš atsakant",
+          "type": "reasoning",
+          "practicalTask": {
+            "title": "Praktinė užduotis: Sukurkite Reasoning struktūrą",
+            "placeholder": "1) Pirmiausia...\n2) Tada...\n3) Galiausiai..."
+          }
+        },
+        {
+          "id": 7,
+          "title": "Quality Control",
+          "subtitle": "Kokybės kriterijai ir validacija",
+          "type": "quality",
+          "practicalTask": {
+            "title": "Praktinė užduotis: Nustatykite 3-5 kokybės kriterijus",
+            "placeholder": "1) Ar...?\n2) Ar...?\n3) Ar...?"
+          }
+        }
+      ],
+      "businessExamples": [
+        {
+          "title": "Verslo sprendimų analizė",
+          "description": "Struktūruotas mąstymas sprendžiant verslo problemas"
+        },
+        {
+          "title": "Verslo dokumentų kokybė",
+          "description": "Kokybės kriterijai verslo dokumentams"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Pažangūs Metodai",
+      "subtitle": "Advanced Parameters ir praktiniai pavyzdžiai",
+      "description": "Išmokite naudoti pažangius parametrus ir kurti pilnus promptus",
+      "icon": "Settings",
+      "slides": [
+        {
+          "id": 8,
+          "title": "Advanced Parameters",
+          "subtitle": "Pažangūs parametrai ir modelio specifika",
+          "type": "advanced",
+          "practicalTask": {
+            "title": "Praktinė užduotis: Nurodykite 2-3 pažangius parametrus",
+            "placeholder": "Temperature: [0-1]\nReasoning: [greitas/normalus/gilus]..."
+          }
+        },
+        {
+          "id": 9,
+          "title": "Pilnas Verslo Pavyzdys",
+          "subtitle": "Pilnas promptas su visais 6 blokais",
+          "type": "full-example",
+          "practicalTask": {
+            "title": "Praktinė užduotis: Sukurkite pilną verslo promptą",
+            "placeholder": "META: ...\nINPUT: ...\nOUTPUT: ...\nREASONING: ...\nQUALITY: ...\nADVANCED: ..."
+          }
+        },
+        {
+          "id": 10,
+          "title": "Prieš ir Po",
+          "subtitle": "Palyginimas: nestruktūruotas vs struktūruotas",
+          "type": "comparison"
+        },
+        {
+          "id": 11,
+          "title": "Santrauka",
+          "subtitle": "Pagrindinės idėjos ir kiti žingsniai",
+          "type": "summary"
+        }
+      ],
+      "businessExamples": [
+        {
+          "title": "Q4 Pardavimų Strategija",
+          "description": "Pilnas verslo promptas su visais 6 blokais"
+        },
+        {
+          "title": "Marketing Planas",
+          "description": "Struktūruotas marketingo strategijos promptas"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "questions": [
+      {
+        "id": 1,
+        "module": 1,
+        "question": "Kuris blokas yra svarbiausias prompt struktūroje?",
+        "options": ["Meta blokas", "Input blokas", "Output blokas", "Reasoning blokas"],
+        "correct": 0
+      },
+      {
+        "id": 2,
+        "module": 1,
+        "question": "Ką turėtų apimti Meta blokas?",
+        "options": ["Tik rolę", "Rolę, patirtį, sritį ir tikslą", "Tik duomenis", "Tik formatą"],
+        "correct": 1
+      },
+      {
+        "id": 3,
+        "module": 1,
+        "question": "Input bloke turėtų būti:",
+        "options": ["Bendri aprašymai", "Konkretūs skaičiai, datos, faktai", "Tik formatas", "Tik kokybės kriterijai"],
+        "correct": 1
+      },
+      {
+        "id": 4,
+        "module": 2,
+        "question": "Output blokas apima:",
+        "options": ["Tik ilgį", "Tik formatą", "Formatą, struktūrą, ilgį, toną", "Tik kalbą"],
+        "correct": 2
+      },
+      {
+        "id": 5,
+        "module": 2,
+        "question": "Kiek žingsnių turi Reasoning struktūra?",
+        "options": ["3", "4", "5", "6"],
+        "correct": 3
+      },
+      {
+        "id": 6,
+        "module": 2,
+        "question": "Quality Control blokas padeda:",
+        "options": ["Tik formatuoti", "AI įvertinti savo darbą prieš pateikiant rezultatą", "Tik struktūruoti", "Tik nustatyti parametrus"],
+        "correct": 1
+      },
+      {
+        "id": 7,
+        "module": 3,
+        "question": "Temperature parametras kontroliuoja:",
+        "options": ["Tik greitį", "Kūrybiškumą ir faktualumą", "Tik ilgį", "Tik kalbą"],
+        "correct": 1
+      },
+      {
+        "id": 8,
+        "module": 3,
+        "question": "Kiek blokų turi pilnas struktūruotas promptas?",
+        "options": ["3", "4", "5", "6"],
+        "correct": 3
+      },
+      {
+        "id": 9,
+        "module": 3,
+        "question": "Struktūruotas promptas pagerina rezultatus:",
+        "options": ["10%", "40%", "60%", "85%"],
+        "correct": 3
+      }
+    ]
+  }
+}
