@@ -1,0 +1,82 @@
+{
+  "prompts": [
+    {
+      "id": "mini-zero-shot",
+      "title": "Mini: Zero-shot šūkis",
+      "description": "Vienas sakinys be pavyzdžių.",
+      "prompt": "Sukurk vieno sakinio produkto šūkį sveikatos programėlei."
+    },
+    {
+      "id": "mini-few-shots",
+      "title": "Mini: Few-shots šūkiai",
+      "description": "Su 2 pavyzdžiais ir 3 naujais.",
+      "prompt": "Pavyzdžiai:\n1) „Mažiau streso, daugiau energijos.“\n2) „Tavo sveikata – tavo planas.“\nSukurk dar 3 panašaus stiliaus šūkius."
+    },
+    {
+      "id": "mini-chain",
+      "title": "Mini: Minčių grandinė",
+      "description": "Problemos → sprendimai → planas.",
+      "prompt": "Identifikuok 3 klientų problemas. Pasiūlyk sprendimus. Sudaryk veiksmų planą."
+    },
+    {
+      "id": "mini-sequence",
+      "title": "Mini: Promptų seka",
+      "description": "Tezės → planas → įvadas.",
+      "prompt": "Sukurk 5 tezes apie darbuotojų įsitraukimą → Sudaryk plano struktūrą → Parašyk 1 pastraipos įvadą."
+    },
+    {
+      "id": "mini-instructions",
+      "title": "Mini: Instruktavimas",
+      "description": "Apimtis, tonas, kalba.",
+      "prompt": "Parašyk 180–220 žodžių pranešimą investuotojams. Tonas: formalus. Kalba: LT."
+    },
+    {
+      "id": "daily-summary",
+      "title": "Dienos santrauka",
+      "description": "Trumpa ir aiški dienos ataskaita komandai.",
+      "prompt": "META: Jūs esate projektų koordinatorius.\nINPUT: Šios dienos darbai: [įrašykite darbus], pasiekti rezultatai: [rezultatai], kliūtys: [kliūtys], rytdienos planas: [planas].\nOUTPUT: 5 punktų sąrašas lietuvių kalba. Kiekvienas punktas 1–2 sakiniai.\nQUALITY: 1) Ar aiškūs veiksmai? 2) Ar paminėtos kliūtys? 3) Ar matomas rytojaus planas?"
+    },
+    {
+      "id": "meeting-notes",
+      "title": "Susitikimo užrašai",
+      "description": "Struktūruotos pastabos po susitikimo.",
+      "prompt": "META: Jūs esate susitikimo sekretorius.\nINPUT: Susitikimo tema: [tema]. Dalyviai: [vardai]. Pastabos: [tekstas].\nOUTPUT: Struktūra: 1) Santrauka, 2) Sprendimai, 3) Veiksmai (kas/kada), 4) Atviri klausimai.\nQUALITY: 1) Ar aiškūs sprendimai? 2) Ar nurodyti atsakingi asmenys? 3) Ar liko atviri klausimai?"
+    },
+    {
+      "id": "email-reply",
+      "title": "El. laiško atsakymas",
+      "description": "Mandagus ir trumpas atsakymas klientui ar kolegai.",
+      "prompt": "META: Jūs esate klientų aptarnavimo specialistas.\nINPUT: Gaunamas laiškas: [įdėkite laišką].\nOUTPUT: Trumpas atsakymas (4–6 sakiniai), profesionalus tonas, aiškus kitas žingsnis.\nQUALITY: 1) Ar atsakoma į klausimą? 2) Ar aiškus kitas veiksmas? 3) Ar tonas mandagus?"
+    },
+    {
+      "id": "task-list",
+      "title": "Užduočių sąrašas",
+      "description": "Aiškus darbų planas iš ilgo teksto.",
+      "prompt": "META: Jūs esate asmeninis darbo asistentas.\nINPUT: Tekstas su reikalavimais ar idėjomis: [įdėkite tekstą].\nOUTPUT: Užduočių sąrašas su prioritetais (A/B/C) ir terminais, jei paminėti.\nQUALITY: 1) Ar viskas paversta į konkrečias užduotis? 2) Ar aiškūs prioritetai?"
+    },
+    {
+      "id": "decision-brief",
+      "title": "Sprendimo santrauka",
+      "description": "Trumpa santrauka vadovui prieš sprendimą.",
+      "prompt": "META: Jūs esate verslo analitikas.\nINPUT: Situacija: [aprašymas]. Variantai: [variantai]. Duomenys: [skaičiai].\nOUTPUT: 1 puslapio santrauka: problema, 2–3 variantai, rekomendacija, rizikos.\nQUALITY: 1) Ar aiški rekomendacija? 2) Ar įvardytos rizikos? 3) Ar remtasi duomenimis?"
+    },
+    {
+      "id": "process-outline",
+      "title": "Proceso aprašas",
+      "description": "Paprastas žingsnis po žingsnio procesas.",
+      "prompt": "META: Jūs esate procesų specialistas.\nINPUT: Reikia aprašyti procesą: [tema]. Dabartiniai žingsniai: [žingsniai].\nOUTPUT: 6–10 punktų procesas, aiškūs veiksmažodžiai, trumpi sakiniai.\nQUALITY: 1) Ar seka logiška? 2) Ar veiksmai aiškūs?"
+    },
+    {
+      "id": "content-rewrite",
+      "title": "Teksto supaprastinimas",
+      "description": "Trumpesnė ir aiškesnė teksto versija.",
+      "prompt": "META: Jūs esate redaktorius.\nINPUT: Tekstas: [įdėkite tekstą]. Tikslas: [auditorija].\nOUTPUT: 30–50% trumpesnė versija, aiški kalba, be žargono.\nQUALITY: 1) Ar prasmė išliko? 2) Ar tekstas paprastesnis?"
+    },
+    {
+      "id": "swot",
+      "title": "SWOT analizė",
+      "description": "Greita verslo ar projekto analizė.",
+      "prompt": "META: Jūs esate verslo konsultantas.\nINPUT: Projektas/įmonė: [aprašymas]. Duomenys: [faktai].\nOUTPUT: SWOT lentelė su 3–5 punktais kiekvienoje dalyje.\nQUALITY: 1) Ar punktai konkretūs? 2) Ar remtasi faktais?"
+    }
+  ]
+}

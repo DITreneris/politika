@@ -2,220 +2,636 @@
   "modules": [
     {
       "id": 1,
-      "title": "Prompt Pagrindai",
-      "subtitle": "Meta, Input ir Output blokai",
-      "description": "Išmokite pagrindinius prompt struktūros blokus su verslo pavyzdžiais",
+      "title": "6 Blokų Sistema",
+      "subtitle": "Visa prompt struktūra nuo A iki Z",
+      "description": "Išmokite visus 6 prompt struktūros blokus viename nuosekliame mokyme",
       "icon": "Target",
+      "level": "learn",
+      "duration": "25 min",
       "slides": [
         {
           "id": 1,
-          "title": "Įvadas",
-          "subtitle": "Apie mokymą ir 6 blokų sistemą",
+          "title": "Įvadas į Prompt Inžineriją",
+          "subtitle": "Kodėl struktūra svarbi ir ką išmoksite",
           "type": "intro"
         },
         {
           "id": 2,
-          "title": "Hierarchinė Struktūra",
-          "subtitle": "6 blokų sistema nuo svarbiausio iki papildomų parametrų",
-          "type": "hierarchy"
+          "title": "Ką Reiškia 'Promptas'?",
+          "subtitle": "Apibrėžimai ir prompt inžinerijos esmė",
+          "type": "definitions",
+          "content": {
+            "promptDefinition": "Promptas – tai tekstinė instrukcija ar klausimas, kurį pateikiate DI modeliui, siekdami gauti norimą atsakymą. Tai jūsų komunikacijos su dirbtinio intelekto sistema forma.",
+            "engineeringDefinition": "Prompt inžinerija – tai inžinerinis požiūris į DI užklausų kūrimą: aiški specifikacija, struktūra ir iteracinis tobulinimas, siekiant nuspėjamų ir patikimų rezultatų.",
+            "aspects": [
+              {
+                "icon": "Target",
+                "title": "Specifikacija",
+                "description": "Tikslus užduoties apibrėžimas: tikslas, auditorija, reikalavimai ir apribojimai.",
+                "example": "Tikslas: parengti Q3 pardavimų santrauką valdybai. Auditorija: 6 nariai. Apribojimai: 1 puslapis, LT kalba."
+              },
+              {
+                "icon": "Layers",
+                "title": "Struktūra",
+                "description": "Informacijos organizavimas: kontekstas, duomenys, formatas, prioritetai.",
+                "example": "Atskirk ir sunumeruok: 1) META 2) INPUT 3) OUTPUT 4) QUALITY. Trumpai – ką rašyti."
+              },
+              {
+                "icon": "Repeat",
+                "title": "Iteracija",
+                "description": "Bandymas, matavimas, tikslinimas ir kokybės kontrolė, kol rezultatas atitinka poreikius.",
+                "example": "Iteracija: 1) formatas 2) KPI 3) kriterijai. Trumpai – ką tikrinti."
+              }
+            ],
+            "keyInsight": "Prompt inžinerija = Specifikacija + Struktūra + Iteracija",
+            "sources": [
+              {
+                "label": "OpenAI Prompt Engineering Guide",
+                "url": "https://platform.openai.com/docs/guides/prompt-engineering"
+              },
+              {
+                "label": "Microsoft OpenAI Prompt Engineering",
+                "url": "https://learn.microsoft.com/azure/ai-services/openai/concepts/prompt-engineering"
+              },
+              {
+                "label": "Anthropic Prompt Engineering",
+                "url": "https://docs.anthropic.com/claude/docs/prompt-engineering"
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "title": "Workflow Samprata",
+          "subtitle": "Nuo paprasto pokalbio iki darbo rezultatų",
+          "type": "workflow-summary",
+          "content": {
+            "intro": "Workflow – tai aiški veiksmų seka, kaip informacija juda nuo įvedimo iki rezultato.",
+            "diagrams": [
+              {
+                "title": "1) Basic naudojimas (pokalbis)",
+                "subtitle": "Tinka idėjoms, paaiškinimams, diskusijoms.",
+                "steps": ["Input (klausimas)", "LLM", "Output (atsakymas)"],
+                "note": "Ribota kontrolė, mažai struktūros."
+              },
+              {
+                "title": "2) Workflow dokumentams ir darbui",
+                "subtitle": "DI tampa darbo įrankiu, o ne pašnekovu.",
+                "steps": ["Input (promptas + duomenys)", "LLM", "Output (analizė/dokumentas/planas)"],
+                "note": "Aiškūs reikalavimai, formatas ir rezultatas."
+              }
+            ],
+            "examples": [
+              {
+                "title": "Basic (pokalbis, su humoru)",
+                "prompt": "Paaiškink, kas yra prompt inžinerija, trumpai ir su švelniu humoru."
+              },
+              {
+                "title": "Detaliau (liepiantis)",
+                "prompt": "Sukurk 5 punktų paaiškinimą apie prompt inžineriją. Formatas: numeruotas sąrašas. Tonas: profesionalus. Maks. 120 žodžių."
+              }
+            ]
+          }
         },
         {
           "id": 3,
-          "title": "Meta Blokas",
-          "subtitle": "Rolė ir kontekstas - kas esate ir ką darote?",
-          "type": "meta",
-          "practicalTask": {
-            "title": "Praktinė užduotis: Sukurkite Meta bloką",
-            "placeholder": "Jūs esate [rolė] su [patirtis] [srityje]. Jūsų tikslas..."
+          "title": "Pagrindiniai Promptų Tipai",
+          "subtitle": "Trys esminiai promptų tipai efektyviam bendravimui su DI",
+          "type": "prompt-types",
+          "content": {
+            "types": [
+              {
+                "name": "Sisteminiai Promptai",
+                "color": "brand",
+                "description": "Nustato DI darbo tikslą ir ribas.",
+                "example": "Tu esi rinkodaros analitikas; pateik konkurentų analizės struktūrą ir pagrindines metrikas, prašau.",
+                "result": "DI veikia kaip specializuotas analitikas, pateikdamas struktūruotas verslo įžvalgas."
+              },
+              {
+                "name": "Kontekstiniai Promptai",
+                "color": "accent",
+                "description": "Pateikia užduotį ir svarbų kontekstą.",
+                "example": "Paruošk konkurentų analizę Lietuvos logistikos sektoriui, trumpai ir aiškiai, remdamasis 2024 m. duomenimis.",
+                "result": "Atsakymai orientuoti į Lietuvos rinką ir aktualiausius duomenis."
+              },
+              {
+                "name": "Vaidmens Promptai",
+                "color": "violet",
+                "description": "Nustato toną, stilių ir auditoriją.",
+                "example": "Įsivaizduok, kad esi įmonės vadovas ir pristatai komandai strategiją, trumpai ir įtikinamai šiandien.",
+                "result": "Tekstas parašytas lyderio kalba – įkvepiantis, vizionieriškas ir motyvuojantis."
+              }
+            ],
+            "practicalTip": "Kombinuokite visus tris promptų tipus viename užklausime, kad gautumėte maksimaliai tikslų ir verslo poreikius atitinkantį rezultatą. Tai ypač svarbu ruošiant strateginius dokumentus ar analizes."
+          }
+        },
+        {
+          "id": 14,
+          "title": "Prompting'o Technikos",
+          "subtitle": "6 bazinės technikos ir kopijuojami pavyzdžiai",
+          "type": "prompt-techniques",
+          "content": {
+            "logicSteps": [
+              "Zero-shot (be konteksto)",
+              "Few-shots (su pavyzdžiais)",
+              "Minčių grandinė (žingsniai)",
+              "Promptų seka (rezultatų grandinimas)",
+              "Instruktavimas (formatas, tonas)",
+              "Manipuliacija (ko vengti)"
+            ],
+            "techniques": [
+              {
+                "title": "Zero-shot",
+                "description": "Vienas aiškus prašymas be papildomų pavyzdžių.",
+                "example": "Sukurk 1 sakinio produkto šūkį."
+              },
+              {
+                "title": "Few-shots",
+                "description": "Pateik 1–2 pavyzdžius ir paprašyk naujų.",
+                "example": "Pavyzdžiai: „Mažiau streso, daugiau energijos.“ „Tavo sveikata – tavo planas.“ Sukurk dar 3."
+              },
+              {
+                "title": "Minčių grandinė",
+                "description": "Užduotis skaidoma į aiškius žingsnius.",
+                "example": "Minčių grandinė: 1) koncepcija 2) planas 3) biudžetas 4) darbų grafikas."
+              },
+              {
+                "title": "Promptų seka",
+                "description": "Vieno rezultato pagrindu kuriamas kitas.",
+                "example": "Sukurk tezes → Sudaryk planą → Parašyk įvadą."
+              },
+              {
+                "title": "Instruktavimas",
+                "description": "Tikslus formatas, apimtis ir tonas.",
+                "example": "Parašyk 200 žodžių pranešimą, formalus tonas, LT kalba."
+              },
+              {
+                "title": "Manipuliacija (vengti)",
+                "description": "Šališkos užklausos iškreipia rezultatą.",
+                "example": "Įrodyk, kad X geriau už Y."
+              }
+            ]
+          }
+        },
+        {
+          "id": 16,
+          "title": "Gero Prompto Šablonas",
+          "subtitle": "META + INPUT + OUTPUT",
+          "type": "prompt-template",
+          "content": {
+            "blocks": [
+              {
+                "title": "META (vaidmuo + tikslas + auditorija)",
+                "description": "Kas jūs esate, ką darote ir kam skirtas rezultatas.",
+                "example": "Vaidmuo – marketingo vadovas. Tikslas – SWOT analizė. Auditorija – vadovybė."
+              },
+              {
+                "title": "INPUT (duomenys + apribojimai)",
+                "description": "Faktai, skaičiai ir ribojimai, su kuriais dirbama.",
+                "example": "Produktas „EcoBox“. Tikslas – mažmeninė prekyba. Apribojimas – 1 puslapis."
+              },
+              {
+                "title": "OUTPUT (formatas + struktūra + tonas)",
+                "description": "Kaip turi atrodyti rezultatas ir kokiu tonu.",
+                "example": "Formatas – lentelė. Struktūra – S/W/O/T po 3 punktus. Tonas – profesionalus."
+              }
+            ],
+            "template": "META: Vaidmuo – [kas esate]. Tikslas – [ką sukurti]. Auditorija – [kam].\nINPUT: Duomenys – [faktai/skaičiai]. Apribojimai – [laikas/biudžetas].\nOUTPUT: Format – [lentelė/sąrašas/dokumentas]. Struktūra – [punktai/skyriai]. Tonas – [stilius].",
+            "example": "META: Vaidmuo – marketingo vadovas. Tikslas – paruošti SWOT analizę. Auditorija – vadovybė.\nINPUT: Duomenys – produktas „EcoBox“, tikslas mažmeninė prekyba. Apribojimai – 1 puslapis.\nOUTPUT: Format – lentelė su punktais. Struktūra – S/W/O/T po 3 punktus. Tonas – profesionalus, aiškus."
+          }
+        },
+        {
+          "id": 17,
+          "title": "Ko jau išmokome?",
+          "subtitle": "Pereiname nuo aiškios užduoties prie validavimo",
+          "type": "transition-3-to-6",
+          "content": {
+            "title": "Iki čia – aiški užduotis. Toliau – kontrolė.",
+            "mapping": [
+              { "from": "Kas padaryta", "to": "Sukurta aiški užduotis su META, INPUT, OUTPUT." },
+              { "from": "Kas toliau", "to": "Pridedame Reasoning, Quality ir Advanced – tikrinimui ir stabilumui." }
+            ],
+            "note": "Sudėtingoms užduotims reikia ne tik aiškumo, bet ir validavimo.",
+            "takeaway": "Nuo 3 blokų iki 6 blokų = nuo užduoties prie kontrolės."
           }
         },
         {
           "id": 4,
-          "title": "Input Blokas",
-          "subtitle": "Faktinė informacija, duomenys ir apribojimai",
-          "type": "input",
-          "practicalTask": {
-            "title": "Praktinė užduotis: Aprašykite Input duomenis",
-            "placeholder": "Duomenys: [skaičiai, faktai, datos]..."
-          }
-        }
-      ],
-      "businessExamples": [
-        {
-          "title": "Pardavimų ataskaita",
-          "description": "Q3 2024 pardavimų analizė su konkretiais skaičiais"
+          "title": "Hierarchinė Struktūra",
+          "subtitle": "6 blokų sistema: nuo svarbiausio iki papildomų",
+          "type": "hierarchy"
         },
         {
-          "title": "Klientų analizė",
-          "description": "Segmentacija ir elgesio analizė"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Mąstymo Struktūra",
-      "subtitle": "Output, Reasoning ir Quality Control",
-      "description": "Išmokite struktūruoti AI mąstymą ir kokybės kontrolę",
-      "icon": "Brain",
-      "slides": [
-        {
           "id": 5,
-          "title": "Output Blokas",
-          "subtitle": "Rezultato formatas ir struktūros reikalavimai",
-          "type": "output",
-          "practicalTask": {
-            "title": "Praktinė užduotis: Aprašykite Output formatą",
-            "placeholder": "Formatas: [lentelė/tekstas/sąrašas]..."
-          }
+          "title": "1️⃣ Meta Blokas",
+          "subtitle": "Rolė, kontekstas ir tikslas – kas esate ir ką darote?",
+          "type": "meta",
+          "blockNumber": 1,
+          "keyQuestion": "Kas esate ir ką darote?"
         },
         {
           "id": 6,
-          "title": "Reasoning Blokas",
-          "subtitle": "Mąstymo struktūra prieš atsakant",
-          "type": "reasoning",
-          "practicalTask": {
-            "title": "Praktinė užduotis: Sukurkite Reasoning struktūrą",
-            "placeholder": "1) Pirmiausia...\n2) Tada...\n3) Galiausiai..."
-          }
+          "title": "2️⃣ Input Blokas",
+          "subtitle": "Faktai, duomenys ir apribojimai – ką turite?",
+          "type": "input",
+          "blockNumber": 2,
+          "keyQuestion": "Kokius duomenis ir apribojimus turite?"
         },
         {
           "id": 7,
-          "title": "Quality Control",
-          "subtitle": "Kokybės kriterijai ir validacija",
-          "type": "quality",
-          "practicalTask": {
-            "title": "Praktinė užduotis: Nustatykite 3-5 kokybės kriterijus",
-            "placeholder": "1) Ar...?\n2) Ar...?\n3) Ar...?"
-          }
-        }
-      ],
-      "businessExamples": [
-        {
-          "title": "Verslo sprendimų analizė",
-          "description": "Struktūruotas mąstymas sprendžiant verslo problemas"
+          "title": "3️⃣ Output Blokas",
+          "subtitle": "Formatas ir struktūra – ko tikitės?",
+          "type": "output",
+          "blockNumber": 3,
+          "keyQuestion": "Kokį formatą ir struktūrą norite?"
         },
         {
-          "title": "Verslo dokumentų kokybė",
-          "description": "Kokybės kriterijai verslo dokumentams"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Pažangūs Metodai",
-      "subtitle": "Advanced Parameters ir praktiniai pavyzdžiai",
-      "description": "Išmokite naudoti pažangius parametrus ir kurti pilnus promptus",
-      "icon": "Settings",
-      "slides": [
-        {
           "id": 8,
-          "title": "Advanced Parameters",
-          "subtitle": "Pažangūs parametrai ir modelio specifika",
-          "type": "advanced",
-          "practicalTask": {
-            "title": "Praktinė užduotis: Nurodykite 2-3 pažangius parametrus",
-            "placeholder": "Temperature: [0-1]\nReasoning: [greitas/normalus/gilus]..."
-          }
+          "title": "4️⃣ Reasoning Blokas",
+          "subtitle": "Mąstymo logika – kaip DI turi mąstyti?",
+          "type": "reasoning",
+          "blockNumber": 4,
+          "keyQuestion": "Kaip mąstyti prieš atsakant?"
         },
         {
           "id": 9,
-          "title": "Pilnas Verslo Pavyzdys",
-          "subtitle": "Pilnas promptas su visais 6 blokais",
-          "type": "full-example",
-          "practicalTask": {
-            "title": "Praktinė užduotis: Sukurkite pilną verslo promptą",
-            "placeholder": "META: ...\nINPUT: ...\nOUTPUT: ...\nREASONING: ...\nQUALITY: ...\nADVANCED: ..."
-          }
+          "title": "5️⃣ Quality Control Blokas",
+          "subtitle": "Kokybės kriterijai – kaip patikrinti?",
+          "type": "quality",
+          "blockNumber": 5,
+          "keyQuestion": "Kaip patikrinti rezultato kokybę?"
         },
         {
           "id": 10,
-          "title": "Prieš ir Po",
-          "subtitle": "Palyginimas: nestruktūruotas vs struktūruotas",
-          "type": "comparison"
+          "title": "6️⃣ Advanced Parameters",
+          "subtitle": "Pažangūs parametrai – kaip tiksliai kontroliuoti?",
+          "type": "advanced",
+          "blockNumber": 6,
+          "keyQuestion": "Kokie modelio specifiniai parametrai?"
         },
         {
           "id": 11,
-          "title": "Santrauka",
-          "subtitle": "Pagrindinės idėjos ir kiti žingsniai",
+          "title": "Pilnas Prompt Pavyzdys",
+          "subtitle": "Visi 6 blokai veikia kartu",
+          "type": "full-example"
+        },
+        {
+          "id": 12,
+          "title": "Prieš vs Po",
+          "subtitle": "Struktūruoto ir nestruktūruoto prompt palyginimas",
+          "type": "comparison"
+        },
+        {
+          "id": 13,
+          "title": "Modulio Santrauka",
+          "subtitle": "Pagrindinės idėjos ir ką išmokote",
           "type": "summary"
         }
       ],
       "businessExamples": [
         {
-          "title": "Q4 Pardavimų Strategija",
-          "description": "Pilnas verslo promptas su visais 6 blokais"
+          "title": "E-commerce analizė",
+          "description": "Pardavimų ataskaitos su konkretiais KPI"
         },
         {
-          "title": "Marketing Planas",
-          "description": "Struktūruotas marketingo strategijos promptas"
+          "title": "Strategijos dokumentai",
+          "description": "Valdybos prezentacijos ir planai"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Žinių Patikrinimas",
+      "subtitle": "Testas: ar supratote 6 blokų sistemą?",
+      "description": "Patikrinkite savo žinias su interaktyviu testu apie kiekvieną bloką",
+      "icon": "Brain",
+      "level": "test",
+      "duration": "10 min",
+      "slides": [
+        {
+          "id": 20,
+          "title": "Testo Įvadas",
+          "subtitle": "12 klausimų apie 6 blokus ir workflow",
+          "type": "test-intro"
+        },
+        {
+          "id": 21,
+          "title": "Meta Blokas – Testas",
+          "subtitle": "Klausimai apie rolę ir kontekstą",
+          "type": "test-section",
+          "testQuestions": [
+            {
+              "id": "q1",
+              "question": "Nuo ko geriausia pradėti promptą?",
+              "options": ["Nuo rolės ir tikslo (Meta)", "Nuo rezultatų formato (Output)", "Nuo duomenų (Input)", "Nuo parametrų (Advanced)"],
+              "correct": 0,
+              "explanation": "Meta blokas yra svarbiausias – jis nustato kontekstą visam likusiam promptui."
+            },
+            {
+              "id": "q2",
+              "question": "Ką turi apimti Meta blokas?",
+              "options": ["Rolę, patirtį, tikslinę auditoriją", "Tik skaičius ir duomenis", "Tik rezultato formatą", "Tik kokybės kriterijus"],
+              "correct": 0,
+              "explanation": "Meta blokas apibrėžia KAS esate, KOKIA patirtis ir KAM skirtas rezultatas."
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "title": "Input ir Output – Testas",
+          "subtitle": "Klausimai apie duomenis ir formatą",
+          "type": "test-section",
+          "testQuestions": [
+            {
+              "id": "q3",
+              "question": "Kas yra 'konkretus input'?",
+              "options": ["Tikslūs skaičiai, datos, metrikos", "Bendra nuotaika", "Tik klausimai", "Tik norimas tonas"],
+              "correct": 0,
+              "explanation": "Konkretus input = konkretūs duomenys: 250k EUR, +15%, 1200 užsakymų."
+            },
+            {
+              "id": "q4",
+              "question": "Kam skirtas Output blokas?",
+              "options": ["Nurodyti rezultato formatą ir struktūrą", "Nustatyti DI rolę", "Pateikti pradinius duomenis", "Patikrinti klaidas"],
+              "correct": 0,
+              "explanation": "Output blokas nurodo TIKSLŲ formatą: lentelė, 5 stulpeliai, lietuvių kalba."
+            },
+            {
+              "id": "q5",
+              "question": "Norite gauti 5 punktų sąrašą lietuviškai. Kurį bloką turite nurodyti?",
+              "options": ["Output", "Meta", "Input", "Quality Control"],
+              "correct": 0,
+              "explanation": "Formatas (sąrašas, 5 punktai, kalba) – tai Output bloko atsakomybė."
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "title": "Reasoning ir Quality – Testas",
+          "subtitle": "Klausimai apie mąstymą ir kokybę",
+          "type": "test-section",
+          "testQuestions": [
+            {
+              "id": "q6",
+              "question": "Kam skirtas Reasoning blokas?",
+              "options": ["Nurodyti, kaip DI turi mąstyti prieš atsakant", "Tik pridėti stilių", "Tik pakeisti kalbą", "Tik sutrumpinti tekstą"],
+              "correct": 0,
+              "explanation": "Reasoning blokas nurodo MĄSTYMO SEKĄ: 1) Analizuoti 2) Palyginti 3) Rekomenduoti."
+            },
+            {
+              "id": "q7",
+              "question": "Kam skirtas Quality Control blokas?",
+              "options": ["Nustatyti kokybės kriterijus prieš pateikiant atsakymą", "Tik pridėti stilių", "Tik pakeisti kalbą", "Tik sutrumpinti tekstą"],
+              "correct": 0,
+              "explanation": "Quality Control = tikrinimo kriterijai: Ar logiška? Ar pilna? Ar tikslūs faktai?"
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "title": "Advanced ir Bendra – Testas",
+          "subtitle": "Klausimai apie parametrus ir visą sistemą",
+          "type": "test-section",
+          "testQuestions": [
+            {
+              "id": "q8",
+              "question": "Norite kūrybiškesnio atsakymo. Ką labiausiai verta pakeisti?",
+              "options": ["Temperature (pakelti)", "Input kiekį", "Kalbos nustatymą", "Quality Control kiekį"],
+              "correct": 0,
+              "explanation": "Temperature 0.8-1.0 = kūrybiškesnis. Temperature 0.1-0.3 = tikslesnis, faktinis."
+            },
+            {
+              "id": "q9",
+              "question": "Kiek blokų turi pilnas struktūruotas promptas?",
+              "options": ["3", "4", "5", "6"],
+              "correct": 3,
+              "explanation": "6 blokai: Meta, Input, Output, Reasoning, Quality, Advanced."
+            },
+            {
+              "id": "q10",
+              "question": "Koks minimalus promptas aiškiam rezultatui?",
+              "options": ["Meta + Input + Output", "Tik Output", "Tik Meta", "Reasoning + Quality"],
+              "correct": 0,
+              "explanation": "Minimalus = 3 blokai: KAS esate (Meta) + KĄ turite (Input) + KO norite (Output)."
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "title": "Workflow ir Technikos – Testas",
+          "subtitle": "Klausimai apie darbo seką ir technikas",
+          "type": "test-section",
+          "testQuestions": [
+            {
+              "id": "q11",
+              "question": "Kuo skiriasi basic pokalbis nuo workflow?",
+              "options": ["Workflow turi aiškų formatą ir rezultatą", "Basic visada turi duomenų rinkinį", "Workflow tinka tik kūrybai", "Basic visada naudoja šabloną"],
+              "correct": 0,
+              "explanation": "Workflow apibrėžia formatą, reikalavimus ir laukiamą rezultatą."
+            },
+            {
+              "id": "q12",
+              "question": "Kuri technika remiasi pavyzdžiais?",
+              "options": ["Few-shots", "Zero-shot", "Manipuliacija", "Promptų seka"],
+              "correct": 0,
+              "explanation": "Few-shots pateikia 1–2 pavyzdžius, po to prašo naujų."
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "title": "Testo Rezultatai",
+          "subtitle": "Jūsų žinių įvertinimas",
+          "type": "test-results"
+        }
+      ],
+      "businessExamples": [
+        {
+          "title": "Žinių validacija",
+          "description": "Patikrinkite ar supratote pagrindinius principus"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Praktinis Pritaikymas",
+      "subtitle": "Sukurkite savo promptus realiems scenarijams",
+      "description": "Pritaikykite 6 blokų sistemą 4 skirtingiems verslo scenarijams",
+      "icon": "Settings",
+      "level": "practice",
+      "duration": "20 min",
+      "slides": [
+        {
+          "id": 30,
+          "title": "Praktikos Įvadas",
+          "subtitle": "Kaip atlikti praktines užduotis",
+          "type": "practice-intro"
+        },
+        {
+          "id": 31,
+          "title": "Scenarijus 1: Pardavimų Analizė",
+          "subtitle": "E-commerce quarterly review",
+          "type": "practice-scenario",
+          "scenario": {
+            "context": "Jūs dirbate e-commerce įmonėje. Vadovas prašo parengti Q3 pardavimų ataskaitą valdybai.",
+            "data": "Q3 2024: 250k EUR pajamos (+15% vs Q2), 1200 užsakymų, vidutinis čekis 208 EUR. Grąžinimų rodiklis 3.2%. Top 3 produktų kategorijos: Elektronika (45%), Apranga (30%), Namai (25%).",
+            "constraints": "Ataskaita turi būti parengta per 3 dienas. Valdyboje 6 nariai su skirtinga patirtimi.",
+            "expectedFormat": "Prezentacija (8-10 skaidrių) arba Executive Summary (1-2 puslapiai)"
+          },
+          "practicalTask": {
+            "title": "Sukurkite pilną promptą šiam scenarijui",
+            "placeholder": "META: Jūs esate...\n\nINPUT: Duomenys...\n\nOUTPUT: Formatas...\n\nREASONING: Mąstymo seka...\n\nQUALITY: Kriterijai...\n\nADVANCED: Parametrai...",
+            "templateLabel": "Peržiūrėti pavyzdį",
+            "template": "META: Jūs esate vyresnysis verslo analitikas su 8 metų patirtimi e-commerce srityje. Jūsų tikslas – parengti Q3 pardavimų ataskaitą valdybos nariams, kurie priims strateginius Q4 sprendimus.\n\nINPUT: Q3 2024 duomenys: 250k EUR pajamos (+15% vs Q2), 1200 užsakymų, vidutinis čekis 208 EUR, grąžinimų rodiklis 3.2%. Kategorijos: Elektronika 45%, Apranga 30%, Namai 25%. Apribojimai: 3 dienos, 6 valdybos nariai su skirtinga patirtimi.\n\nOUTPUT: Executive Summary formatas (1-2 puslapiai). Struktūra: 1) Pagrindinės metrikos, 2) Tendencijos, 3) Kategorijų analizė, 4) Rekomendacijos Q4. Kalba: lietuvių, verslo tonas.\n\nREASONING: 1) Apibendrinti pagrindinius KPI 2) Palyginti su ankstesniu laikotarpiu 3) Identifikuoti augimo ir problemų sritis 4) Suformuluoti 3 aiškias rekomendacijas.\n\nQUALITY: ✓ Visi skaičiai tikslūs ✓ Palyginimas su Q2 ✓ Aiškios rekomendacijos ✓ Tinkamas ilgis (1-2 psl.)\n\nADVANCED: Temperature 0.3 (faktinis tonas), Format: struktūruotas verslo dokumentas.",
+            "explanation": "Šis pavyzdys rodo, kaip kiekvienas blokas papildo kitą ir sukuria pilną kontekstą."
+          }
+        },
+        {
+          "id": 32,
+          "title": "Scenarijus 2: Marketingo Planas",
+          "subtitle": "Q1 kampanijos strategija",
+          "type": "practice-scenario",
+          "scenario": {
+            "context": "Esate marketingo vadovas. Reikia parengti Q1 2025 marketingo planą generaliniam direktoriui.",
+            "data": "Q4 2024 rezultatai: 45 nauji klientai, CAC 6500 EUR, konversija 2.8%. Konkurentų augimas: +25% ir +18%. Planuojamas biudžetas: 300k EUR.",
+            "constraints": "Planas turi būti parengtas per 2 savaites. Komanda: 3 žmonės. Prioritetas – B2B segmentas.",
+            "expectedFormat": "Strateginis dokumentas su veiksmų planu ir KPI"
+          },
+          "practicalTask": {
+            "title": "Sukurkite pilną promptą marketingo planui",
+            "placeholder": "META: Jūs esate...\n\nINPUT: Duomenys...\n\nOUTPUT: Formatas...\n\nREASONING: Mąstymo seka...\n\nQUALITY: Kriterijai...\n\nADVANCED: Parametrai...",
+            "explanation": "Pritaikykite 6 blokų sistemą marketingo kontekstui. Atkreipkite dėmesį į B2B specifiką."
+          }
+        },
+        {
+          "id": 33,
+          "title": "Scenarijus 3: HR Dokumentas",
+          "subtitle": "Darbuotojų apklausos analizė",
+          "type": "practice-scenario",
+          "scenario": {
+            "context": "Esate HR vadovas. Reikia išanalizuoti metinės darbuotojų apklausos rezultatus ir pateikti rekomendacijas vadovybei.",
+            "data": "Dalyvavo 156/180 darbuotojų (87%). Bendras pasitenkinimas: 7.2/10 (+0.4 vs praėjusių metų). Probleminės sritys: karjeros galimybės (5.8), darbo/asmeninio gyvenimo balansas (6.1). Stipriosios pusės: komandinis darbas (8.4), vadovų palaikymas (7.9).",
+            "constraints": "Vadovybė nori konkrečių veiksmų plano. Biudžetas iniciatyvoms: 50k EUR.",
+            "expectedFormat": "Ataskaita su vizualizacijomis ir veiksmų planu"
+          },
+          "practicalTask": {
+            "title": "Sukurkite pilną promptą HR analizei",
+            "placeholder": "META: Jūs esate...\n\nINPUT: Duomenys...\n\nOUTPUT: Formatas...\n\nREASONING: Mąstymo seka...\n\nQUALITY: Kriterijai...\n\nADVANCED: Parametrai...",
+            "explanation": "HR kontekstas reikalauja jautrumo darbuotojų duomenims. Atkreipkite dėmesį į konfidencialumą."
+          }
+        },
+        {
+          "id": 34,
+          "title": "Scenarijus 4: Produkto Aprašymas",
+          "subtitle": "Naujo produkto launch'as",
+          "type": "practice-scenario",
+          "scenario": {
+            "context": "Esate produkto vadovas. Reikia parengti naujo produkto aprašymą svetainei ir reklaminei kampanijai.",
+            "data": "Produktas: SaaS platforma mažoms įmonėms. Kaina: 49 EUR/mėn. USP: automatizuoja 80% rutininių užduočių. Tikslinė auditorija: 5-20 darbuotojų įmonės. Konkurentai: 2x brangesni, bet su daugiau funkcijų.",
+            "constraints": "Aprašymas turi būti SEO optimizuotas. Maksimalus ilgis: 500 žodžių. Tonas: profesionalus, bet draugiškas.",
+            "expectedFormat": "Svetainės tekstas + 3 reklaminiai teiginiai"
+          },
+          "practicalTask": {
+            "title": "Sukurkite pilną promptą produkto aprašymui",
+            "placeholder": "META: Jūs esate...\n\nINPUT: Duomenys...\n\nOUTPUT: Formatas...\n\nREASONING: Mąstymo seka...\n\nQUALITY: Kriterijai...\n\nADVANCED: Parametrai...",
+            "explanation": "Produkto aprašymui svarbu: aiški nauda, SEO raktažodžiai, call-to-action."
+          }
+        },
+        {
+          "id": 35,
+          "title": "Praktikos Santrauka",
+          "subtitle": "Ką išmokote ir kiti žingsniai",
+          "type": "practice-summary"
+        }
+      ],
+      "businessExamples": [
+        {
+          "title": "Realūs verslo scenarijai",
+          "description": "4 skirtingos situacijos praktiniam pritaikymui"
+        },
+        {
+          "title": "Portfolio kūrimas",
+          "description": "Sukurti promptai tampa jūsų šablonų biblioteka"
         }
       ]
     }
   ],
   "quiz": {
+    "title": "Baigiamasis Testas",
+    "description": "Galutinis žinių patikrinimas",
+    "passingScore": 70,
     "questions": [
       {
         "id": 1,
-        "module": 1,
-        "question": "Kuris blokas yra svarbiausias prompt struktūroje?",
-        "options": ["Meta blokas", "Input blokas", "Output blokas", "Reasoning blokas"],
+        "question": "Nuo ko geriausia pradėti promptą?",
+        "options": ["Nuo rolės ir tikslo (Meta)", "Nuo rezultatų formato (Output)", "Nuo papildomų parametrų (Advanced)", "Nuo pavyzdžių"],
         "correct": 0
       },
       {
         "id": 2,
-        "module": 1,
-        "question": "Ką turėtų apimti Meta blokas?",
-        "options": ["Tik rolę", "Rolę, patirtį, sritį ir tikslą", "Tik duomenis", "Tik formatą"],
-        "correct": 1
+        "question": "Ką turi apimti Meta blokas?",
+        "options": ["Rolę, patirtį ir tikslinę auditoriją", "Tik skaičius ir duomenis", "Tik rezultato formatą", "Tik kokybės kriterijus"],
+        "correct": 0
       },
       {
         "id": 3,
-        "module": 1,
-        "question": "Input bloke turėtų būti:",
-        "options": ["Bendri aprašymai", "Konkretūs skaičiai, datos, faktai", "Tik formatas", "Tik kokybės kriterijai"],
-        "correct": 1
+        "question": "Kas yra 'konkretus input'?",
+        "options": ["Tikslūs skaičiai, datos, metrikos", "Bendra nuotaika", "Tik klausimai", "Tik norimas tonas"],
+        "correct": 0
       },
       {
         "id": 4,
-        "module": 2,
-        "question": "Output blokas apima:",
-        "options": ["Tik ilgį", "Tik formatą", "Formatą, struktūrą, ilgį, toną", "Tik kalbą"],
-        "correct": 2
+        "question": "Kam skirtas Output blokas?",
+        "options": ["Nurodyti rezultato formatą ir struktūrą", "Nustatyti DI rolę", "Pateikti pradinius duomenis", "Patikrinti klaidas"],
+        "correct": 0
       },
       {
         "id": 5,
-        "module": 2,
-        "question": "Kiek žingsnių turi Reasoning struktūra?",
-        "options": ["3", "4", "5", "6"],
-        "correct": 3
+        "question": "Norite gauti 5 punktų sąrašą lietuviškai. Kurį bloką turite nurodyti?",
+        "options": ["Output", "Meta", "Input", "Quality Control"],
+        "correct": 0
       },
       {
         "id": 6,
-        "module": 2,
-        "question": "Quality Control blokas padeda:",
-        "options": ["Tik formatuoti", "AI įvertinti savo darbą prieš pateikiant rezultatą", "Tik struktūruoti", "Tik nustatyti parametrus"],
-        "correct": 1
+        "question": "Kam skirtas Reasoning blokas?",
+        "options": ["Nurodyti, kaip DI turi mąstyti", "Pridėti stilių", "Pakeisti kalbą", "Sutrumpinti tekstą"],
+        "correct": 0
       },
       {
         "id": 7,
-        "module": 3,
-        "question": "Temperature parametras kontroliuoja:",
-        "options": ["Tik greitį", "Kūrybiškumą ir faktualumą", "Tik ilgį", "Tik kalbą"],
-        "correct": 1
+        "question": "Kam skirtas Quality Control blokas?",
+        "options": ["Nustatyti kokybės kriterijus", "Pridėti stilių", "Pakeisti kalbą", "Sutrumpinti tekstą"],
+        "correct": 0
       },
       {
         "id": 8,
-        "module": 3,
+        "question": "Norite kūrybiškesnio atsakymo. Ką verta pakeisti?",
+        "options": ["Temperature (pakelti)", "Input kiekį", "Kalbos nustatymą", "Quality Control kiekį"],
+        "correct": 0
+      },
+      {
+        "id": 9,
         "question": "Kiek blokų turi pilnas struktūruotas promptas?",
         "options": ["3", "4", "5", "6"],
         "correct": 3
       },
       {
-        "id": 9,
-        "module": 3,
-        "question": "Struktūruotas promptas pagerina rezultatus:",
-        "options": ["10%", "40%", "60%", "85%"],
-        "correct": 3
+        "id": 10,
+        "question": "Koks minimalus promptas aiškiam rezultatui?",
+        "options": ["Meta + Input + Output", "Tik Output", "Tik Meta", "Reasoning + Quality"],
+        "correct": 0
+      },
+      {
+        "id": 11,
+        "question": "Kuo išsiskiria workflow užklausa?",
+        "options": ["Aiškus formatas ir rezultatas", "Tik trumpas tekstas", "Nėra apribojimų", "Tik kūrybinė užduotis"],
+        "correct": 0
+      },
+      {
+        "id": 12,
+        "question": "Kuri technika naudoja pavyzdžius?",
+        "options": ["Few-shots", "Zero-shot", "Manipuliacija", "Reasoning"],
+        "correct": 0
       }
     ]
   }
