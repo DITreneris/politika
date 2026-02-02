@@ -434,12 +434,8 @@ function PromptTechniquesSlide({ content }: { content?: PromptTechniquesContent 
 }
 
 function WorkflowSummarySlide({ content }: { content?: WorkflowSummaryContent }) {
-  const getWorkflowIcon = (step: string) => {
-    if (step.toLowerCase().includes('input')) return <MessageSquare className="w-4 h-4 text-brand-600 dark:text-brand-300" />;
-    if (step.toLowerCase().includes('llm')) return <Sparkles className="w-4 h-4 text-accent-600 dark:text-accent-300" />;
-    if (step.toLowerCase().includes('duomenys')) return <Database className="w-4 h-4 text-brand-600 dark:text-brand-300" />;
-    return <FileText className="w-4 h-4 text-emerald-600 dark:text-emerald-300" />;
-  };
+  // Paveikslėlių masyvas pagal diagramų seką
+  const diagramImages = ['/LLM_1.png', '/LLM_2.png'];
 
   return (
     <div className="space-y-6">
@@ -447,31 +443,49 @@ function WorkflowSummarySlide({ content }: { content?: WorkflowSummaryContent })
         <p className="text-gray-700 dark:text-gray-300">{content?.intro}</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {content?.diagrams.map((diagram, idx) => (
           <div key={idx} className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5">
-            <div className="mb-3">
-              <h4 className="font-bold text-gray-900 dark:text-white">{diagram.title}</h4>
+            <div className="mb-4">
+              <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-1">{diagram.title}</h4>
               <p className="text-sm text-gray-600 dark:text-gray-400">{diagram.subtitle}</p>
             </div>
-            <div className="flex flex-wrap items-center gap-2 bg-gray-50 dark:bg-gray-900/40 border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+            
+            {/* Vizualizacijos paveikslėlis */}
+            {diagramImages[idx] && (
+              <div className="mb-4 bg-gray-50 dark:bg-gray-900/40 rounded-xl p-4 border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <img 
+                  src={diagramImages[idx]} 
+                  alt={diagram.title}
+                  className="w-full h-auto rounded-lg shadow-sm object-contain"
+                  loading="lazy"
+                />
+              </div>
+            )}
+
+            {/* Tekstinė diagrama (kaip papildoma informacija) */}
+            <div className="flex flex-wrap items-center gap-2 bg-gray-50 dark:bg-gray-900/40 border border-gray-200 dark:border-gray-700 rounded-xl p-4 mb-3">
               {diagram.steps.map((step, stepIdx) => (
                 <div key={stepIdx} className="flex items-center gap-2">
                   <div className="px-3 py-1.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-800 dark:text-gray-200 flex items-center gap-2">
-                    {getWorkflowIcon(step)}
+                    {step.toLowerCase().includes('input') && <MessageSquare className="w-4 h-4 text-brand-600 dark:text-brand-300" />}
+                    {step.toLowerCase().includes('llm') && <Sparkles className="w-4 h-4 text-accent-600 dark:text-accent-300" />}
+                    {step.toLowerCase().includes('duomenys') && <Database className="w-4 h-4 text-brand-600 dark:text-brand-300" />}
+                    {!step.toLowerCase().includes('input') && !step.toLowerCase().includes('llm') && !step.toLowerCase().includes('duomenys') && <FileText className="w-4 h-4 text-emerald-600 dark:text-emerald-300" />}
                     {step}
                   </div>
                   {stepIdx < diagram.steps.length - 1 && <span className="text-gray-400">→</span>}
                 </div>
               ))}
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">{diagram.note}</p>
+            
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 italic">{diagram.note}</p>
           </div>
         ))}
       </div>
 
       {content?.examples && content.examples.length > 0 && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
           {content.examples.map((example, idx) => (
             <TemplateBlock key={idx} label={example.title} template={example.prompt} />
           ))}
