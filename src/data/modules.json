@@ -276,6 +276,13 @@
           "keyQuestion": "Kokie modelio specifiniai parametrai?"
         },
         {
+          "id": 18,
+          "title": "6️⃣ Advanced Parameters (II)",
+          "subtitle": "Atsakymo kontrolė – ilgis, fokusas, pasikartojimai",
+          "type": "advanced-2",
+          "blockNumber": 6
+        },
+        {
           "id": 12,
           "title": "Pilnas Prompt Pavyzdys",
           "subtitle": "Visi 6 blokai veikia kartu",

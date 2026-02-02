@@ -1790,18 +1790,18 @@ Atsakyk 3 punktais. Be pavyzdžių ir išplėtimų.`}
 Top-p: 0.4
 
 Užduotis:
-Pateik vieną geriausią sprendimą. Nevardink alternatyvų.`}
+Pateik vieną geriausią sprendimą.
+Nevardink alternatyvų.`}
               className="absolute top-2 right-2"
               size="sm"
             />
             <div className="pr-8">
               <div className="mb-2">ADVANCED:</div>
-              <div>Top-p: 0.4</div>
+              <div className="mb-3">Top-p: 0.4</div>
+              <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">Užduotis:</div>
+              <div>Pateik vieną geriausią sprendimą.<br />Nevardink alternatyvų.</div>
             </div>
           </div>
-          <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
-            <strong>Užduotis:</strong> Pateik vieną geriausią sprendimą. Nevardink alternatyvų.
-          </p>
         </div>
 
         <div className="bg-violet-50 dark:bg-violet-900/20 p-3 rounded-lg border-l-4 border-violet-500">
@@ -1846,12 +1846,11 @@ Parašyk tekstą be pasikartojančių frazių ar klišių.`}
             />
             <div className="pr-8">
               <div className="mb-2">ADVANCED:</div>
-              <div>Frequency penalty: 0.8</div>
+              <div className="mb-3">Frequency penalty: 0.8</div>
+              <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">Užduotis:</div>
+              <div>Parašyk tekstą be pasikartojančių frazių ar klišių.</div>
             </div>
           </div>
-          <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
-            <strong>Užduotis:</strong> Parašyk tekstą be pasikartojančių frazių ar klišių.
-          </p>
         </div>
 
         <div className="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-lg border-l-4 border-amber-500">
@@ -2062,36 +2061,147 @@ function SummarySlide() {
       <div className="bg-gradient-to-r from-emerald-50 to-brand-50 dark:from-emerald-900/20 dark:to-brand-900/20 p-6 rounded-xl border-2 border-emerald-200 dark:border-emerald-800">
         <h3 className="font-bold text-xl mb-3 text-gray-900 dark:text-white">🎉 Ką išmokote</h3>
         <p className="text-gray-700 dark:text-gray-300">
-          Sveikiname! Dabar žinote, kaip profesionaliai struktūruoti promptus naudojant 6 blokų sistemą.
+          Sveikiname! Dabar žinote, kaip profesionaliai struktūruoti promptus naudojant 6 blokų sistemą, workflow sampratą ir promptavimo technikas.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl border-2 border-brand-200 dark:border-brand-800">
-          <h4 className="font-bold text-brand-900 dark:text-brand-100 mb-4">6 pagrindiniai blokai:</h4>
-          <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-            <p><strong>1.</strong> Meta - rolė ir kontekstas</p>
-            <p><strong>2.</strong> Input - duomenys ir apribojimai</p>
-            <p><strong>3.</strong> Output - formato reikalavimai</p>
-            <p><strong>4.</strong> Reasoning - mąstymo struktūra</p>
-            <p><strong>5.</strong> Quality - kokybės kriterijai</p>
-            <p><strong>6.</strong> Advanced - parametrai</p>
+      {/* 6 Blokų Sistema */}
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border-2 border-brand-200 dark:border-brand-800">
+        <h4 className="font-bold text-brand-900 dark:text-brand-100 mb-4 text-lg">📚 6 Pagrindiniai Blokai:</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700 dark:text-gray-300">
+          <div className="flex items-start gap-2">
+            <span className="text-brand-600 dark:text-brand-400 font-bold">1.</span>
+            <div>
+              <strong>Meta</strong> - rolė, kontekstas ir tikslas (kas esate ir ką darote)
+            </div>
           </div>
-        </div>
-
-        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl border-2 border-emerald-200 dark:border-emerald-800">
-          <h4 className="font-bold text-emerald-900 dark:text-emerald-100 mb-4">Pagrindinės idėjos:</h4>
-          <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-            {['Hierarchija yra kritinė', 'Konkretumas > bendrumas', 'Pavyzdžiai pagerina rezultatus', 'Kokybės kontrolė būtina'].map((item, idx) => (
-              <li key={idx} className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-start gap-2">
+            <span className="text-brand-600 dark:text-brand-400 font-bold">2.</span>
+            <div>
+              <strong>Input</strong> - duomenys, faktai ir apribojimai (ką turite)
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-brand-600 dark:text-brand-400 font-bold">3.</span>
+            <div>
+              <strong>Output</strong> - formatas, struktūra ir tonas (ko norite)
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-brand-600 dark:text-brand-400 font-bold">4.</span>
+            <div>
+              <strong>Reasoning</strong> - mąstymo struktūra (CoT arba ToT)
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-brand-600 dark:text-brand-400 font-bold">5.</span>
+            <div>
+              <strong>Quality</strong> - kokybės kriterijai (kaip patikrinti)
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-brand-600 dark:text-brand-400 font-bold">6.</span>
+            <div>
+              <strong>Advanced</strong> - parametrai (Temperature, Reasoning depth)
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* Workflow ir Technikos */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl border-2 border-violet-200 dark:border-violet-800">
+          <h4 className="font-bold text-violet-900 dark:text-violet-100 mb-4">🔄 Workflow Samprata:</h4>
+          <div className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+            <div>
+              <strong className="text-violet-700 dark:text-violet-300">Basic naudojimas</strong>
+              <p className="text-xs mt-1">Pokalbiams, idėjoms, diskusijoms. Ribota kontrolė.</p>
+            </div>
+            <div>
+              <strong className="text-violet-700 dark:text-violet-300">Workflow naudojimas</strong>
+              <p className="text-xs mt-1">Dokumentams, procesams. Aiškus formatas ir rezultatas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl border-2 border-amber-200 dark:border-amber-800">
+          <h4 className="font-bold text-amber-900 dark:text-amber-100 mb-4">⚡ Promptavimo Technikos:</h4>
+          <div className="space-y-2 text-xs text-gray-700 dark:text-gray-300">
+            <p>• <strong>Zero-shot</strong> - be pavyzdžių</p>
+            <p>• <strong>Few-shots</strong> - su pavyzdžiais</p>
+            <p>• <strong>Minčių grandinė</strong> - žingsniais</p>
+            <p>• <strong>Promptų seka</strong> - rezultatų grandinimas</p>
+            <p>• <strong>Instruktavimas</strong> - formatas, tonas</p>
+            <p>• <strong>Manipuliacija</strong> - ko vengti</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mąstymo Modeliai ir 3→6 Blokų Perėjimas */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl border-2 border-cyan-200 dark:border-cyan-800">
+          <h4 className="font-bold text-cyan-900 dark:text-cyan-100 mb-4">🧠 Mąstymo Modeliai:</h4>
+          <div className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+            <div>
+              <strong className="text-cyan-700 dark:text-cyan-300">CoT (Chain of Thought)</strong>
+              <p className="text-xs mt-1">Viena loginė seka. Tinka analizėms, skaičiavimams.</p>
+            </div>
+            <div>
+              <strong className="text-cyan-700 dark:text-cyan-300">ToT (Tree of Thoughts)</strong>
+              <p className="text-xs mt-1">Kelios alternatyvos. Tinka strategijai, kūrybai.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-gray-800 p-5 rounded-xl border-2 border-rose-200 dark:border-rose-800">
+          <h4 className="font-bold text-rose-900 dark:text-rose-100 mb-4">📈 Nuo 3 iki 6 Blokų:</h4>
+          <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <p><strong>3 blokai</strong> (Meta + Input + Output) = aiški užduotis</p>
+            <p><strong>6 blokai</strong> (+ Reasoning + Quality + Advanced) = aiški + nuspėjama + patikrinama</p>
+            <p className="text-xs mt-2 text-rose-700 dark:text-rose-300">
+              Sudėtingoms užduotims reikia ne tik aiškumo, bet ir validavimo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Pagrindinės Idėjos */}
+      <div className="bg-white dark:bg-gray-800 p-5 rounded-xl border-2 border-emerald-200 dark:border-emerald-800">
+        <h4 className="font-bold text-emerald-900 dark:text-emerald-100 mb-4">✨ Pagrindinės Idėjos:</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {[
+            'Hierarchija yra kritinė (nuo svarbiausio)',
+            'Konkretumas > bendrumas (tikslūs skaičiai)',
+            'Pavyzdžiai pagerina rezultatus (Few-shots)',
+            'Kokybės kontrolė būtina (Quality blokas)',
+            'Workflow > Basic (procesams)',
+            'Mąstymo modeliai svarbūs (CoT/ToT pasirinkimas)'
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-start gap-2">
+              <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+              <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Motyvacija pereiti prie Modulio 2 */}
+      <div className="bg-gradient-to-r from-violet-50 to-brand-50 dark:from-violet-900/20 dark:to-brand-900/20 p-6 rounded-xl border-2 border-violet-200 dark:border-violet-800">
+        <h4 className="font-bold text-lg mb-3 text-gray-900 dark:text-white">🎯 Kitas Žingsnis:</h4>
+        <p className="text-gray-700 dark:text-gray-300 mb-4">
+          Dabar, kai išmokote 6 blokų sistemą, workflow ir technikas, laikas patikrinti savo žinias!
+        </p>
+        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-violet-200 dark:border-violet-700">
+          <p className="text-sm text-gray-700 dark:text-gray-300">
+            <strong className="text-violet-700 dark:text-violet-300">→ Pereikite prie Modulio 2: "Žinių Patikrinimas"</strong>
+          </p>
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
+            Teste patikrinsite, ar supratote kiekvieną bloką, workflow ir technikas. Kiekvienas klausimas turi paaiškinimą, todėl tai yra ir mokymosi galimybė.
+          </p>
+        </div>
+      </div>
+
+      {/* Galutinė Motyvacija */}
       <div className="bg-gradient-to-r from-brand-500 to-accent-500 p-8 rounded-xl text-white text-center">
         <h3 className="text-2xl font-bold mb-2">Sėkmės su DI! 🚀</h3>
         <p className="text-brand-100">Struktūruoti promptai = nuspėjami rezultatai = didesnis efektyvumas</p>
