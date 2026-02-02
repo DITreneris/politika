@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CheckCircle, Sparkles, MessageCircle, Languages, Lightbulb, Target, Layers, Repeat, MessageSquare, Database, FileText } from 'lucide-react';
+import { CheckCircle, Sparkles, MessageCircle, Languages, Lightbulb, Target, Layers, Repeat } from 'lucide-react';
 import { Progress } from '../utils/progress';
 import { CopyButton, TemplateBlock, PracticalTask } from './slides';
 import type {
@@ -374,7 +374,7 @@ function PromptTypesSlide({ content }: { content?: PromptTypesContent }) {
                   <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1">Pavyzdys:</p>
                   <div className="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-200 dark:border-gray-700">
                     <div className="flex items-start justify-between gap-2 mb-1">
-                      <p className="text-sm text-gray-700 dark:text-gray-300 italic">„{type.example}"</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 italic">&ldquo;{type.example}&rdquo;</p>
                       <CopyButton text={type.example} size="sm" />
                     </div>
                   </div>
@@ -796,7 +796,7 @@ function ReasoningModelsSlide({ onRenderTask }: { onRenderTask: () => JSX.Elemen
           Klausimas: Kaip per Reasoning bloką valdoma DI sprendimo logika?
         </h3>
         <p className="text-gray-700 dark:text-gray-300 mb-3">
-          Tai nėra DI „natūralus mąstymas". Tai – struktūra, kurią tu nurodai prompt'e, kad DI spręstų užduotį tinkamu būdu.
+          Tai nėra DI &ldquo;natūralus mąstymas&rdquo;. Tai – struktūra, kurią tu nurodai prompt&apos;e, kad DI spręstų užduotį tinkamu būdu.
         </p>
         <div className="bg-white dark:bg-gray-800 p-4 rounded-lg mt-3">
           <p className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Reasoning blokas nusprendžia:</p>
@@ -1322,7 +1322,7 @@ function QualityBlockSlide({ onRenderTask }: { onRenderTask: () => JSX.Element |
       {/* Patobulinti QC šablonai */}
       <div className="space-y-4">
         <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border-2 border-gray-200 dark:border-gray-700">
-          <h4 className="font-bold mb-3 text-gray-900 dark:text-white">A. Inline Quality Control (prompt'e)</h4>
+          <h4 className="font-bold mb-3 text-gray-900 dark:text-white">A. Inline Quality Control (prompt&apos;e)</h4>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
             Prieš pateikiant galutinį atsakymą, DI turi patikrinti:
           </p>
@@ -1337,7 +1337,7 @@ function QualityBlockSlide({ onRenderTask }: { onRenderTask: () => JSX.Element |
           <div className="mt-3 p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border border-emerald-200 dark:border-emerald-700">
             <p className="text-xs text-emerald-700 dark:text-emerald-400 font-semibold mb-1">Verslo pavyzdys:</p>
             <p className="text-xs text-gray-700 dark:text-gray-300 italic">
-              "Prieš pateikiant Q4 strategijos rekomendacijas, patikrink: ar visi KPI dera su biudžetu? Pažymėk, kurios prognozės remiasi spėjimais. Nurodyk, jei trūksta konkurentų duomenų."
+              &ldquo;Prieš pateikiant Q4 strategijos rekomendacijas, patikrink: ar visi KPI dera su biudžetu? Pažymėk, kurios prognozės remiasi spėjimais. Nurodyk, jei trūksta konkurentų duomenų.&rdquo;
             </p>
           </div>
         </div>
@@ -1358,7 +1358,7 @@ function QualityBlockSlide({ onRenderTask }: { onRenderTask: () => JSX.Element |
           <div className="mt-3 p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border border-emerald-200 dark:border-emerald-700">
             <p className="text-xs text-emerald-700 dark:text-emerald-400 font-semibold mb-1">Verslo pavyzdys:</p>
             <p className="text-xs text-gray-700 dark:text-gray-300 italic">
-              "Peržiūrėk Q4 pardavimų analizės ataskaitą. Išvardyk: 1) Ar palyginimas su Q3 yra pilnas? 2) Ar rekomendacijos remiasi tik skaičiais, be rinkos konteksto? 3) Kokios prielaidos apie Q1 augimą? 4) Ką dar reikėtų pridėti valdybai?"
+              &ldquo;Peržiūrėk Q4 pardavimų analizės ataskaitą. Išvardyk: 1) Ar palyginimas su Q3 yra pilnas? 2) Ar rekomendacijos remiasi tik skaičiais, be rinkos konteksto? 3) Kokios prielaidos apie Q1 augimą? 4) Ką dar reikėtų pridėti valdybai?&rdquo;
             </p>
           </div>
         </div>
@@ -1400,7 +1400,7 @@ function QualityBlockSlide({ onRenderTask }: { onRenderTask: () => JSX.Element |
           <li>Per drąsų modelį (Advanced parametrai)</li>
         </ul>
         <p className="mt-3 text-sm font-semibold text-emerald-900 dark:text-emerald-100">
-          Tai ne „dar vienas blokas", o apsauga nuo klaidų.
+          Tai ne &ldquo;dar vienas blokas&rdquo;, o apsauga nuo klaidų.
         </p>
       </div>
 
@@ -1426,7 +1426,7 @@ function AdvancedBlockSlide({ onRenderTask }: { onRenderTask: () => JSX.Element 
             Tai neprivalomas, bet labai galingas prompto blokas, leidžiantis:
           </p>
           <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 ml-4 list-disc">
-            <li>sumažinti „fantazijas"</li>
+            <li>sumažinti &ldquo;fantazijas&rdquo;</li>
             <li>padidinti analizės gylį</li>
             <li>tiksliai valdyti toną ir rezultatą</li>
           </ul>
@@ -1541,7 +1541,7 @@ function AdvancedBlockSlide({ onRenderTask }: { onRenderTask: () => JSX.Element 
           <ul className="ml-4 list-disc space-y-1">
             <li>nori stabilaus rezultato</li>
             <li>dirbi su vidiniais dokumentais</li>
-            <li>nenori „per kūrybiško" DI</li>
+            <li>nenori &ldquo;per kūrybiško&rdquo; DI</li>
           </ul>
         </div>
       </div>
@@ -1640,7 +1640,7 @@ Sukurk žingsnis po žingsnio instrukciją naujam darbuotojui, be interpretacij�
         <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
           <li className="flex items-start">
             <span className="text-red-500 mr-2">❌</span>
-            <span>Aukšta temperature analizei → „gražu, bet netikslu"</span>
+            <span>Aukšta temperature analizei → &ldquo;gražu, bet netikslu&rdquo;</span>
           </li>
           <li className="flex items-start">
             <span className="text-red-500 mr-2">❌</span>
@@ -1683,7 +1683,7 @@ function AdvancedParameters2Slide({ onRenderTask }: { onRenderTask: () => JSX.El
           ⚙️ Advanced Parameters (II) – atsakymo kontrolė
         </h3>
         <p className="text-gray-700 dark:text-gray-300 mb-3">
-          <strong>Tikslas:</strong> valdyti atsakymo ilgį, fokusą ir pasikartojimus be papildomo „prompt triukšmo".
+          <strong>Tikslas:</strong> valdyti atsakymo ilgį, fokusą ir pasikartojimus be papildomo &ldquo;prompt triukšmo&rdquo;.
         </p>
         <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-4 rounded-lg">
           <p className="text-sm text-red-800 dark:text-red-200 font-semibold">
@@ -2193,7 +2193,7 @@ function SummarySlide() {
         </p>
         <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-violet-200 dark:border-violet-700">
           <p className="text-sm text-gray-700 dark:text-gray-300">
-            <strong className="text-violet-700 dark:text-violet-300">→ Pereikite prie Modulio 2: "Žinių Patikrinimas"</strong>
+            <strong className="text-violet-700 dark:text-violet-300">→ Pereikite prie Modulio 2: &ldquo;Žinių Patikrinimas&rdquo;</strong>
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
             Teste patikrinsite, ar supratote kiekvieną bloką, workflow ir technikas. Kiekvienas klausimas turi paaiškinimą, todėl tai yra ir mokymosi galimybė.
@@ -2522,7 +2522,7 @@ function PracticeSummarySlide() {
           <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
             <li>• 6 blokų sistemą</li>
             <li>• Hierarchijos svarbą</li>
-            <li>• Konkretaus input'o naudą</li>
+            <li>• Konkretaus input&apos;o naudą</li>
             <li>• Kokybės kontrolę</li>
           </ul>
         </div>

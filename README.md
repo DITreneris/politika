@@ -19,9 +19,10 @@ Interaktyvus mokymas apie DI (dirbtinio intelekto) prompt struktūrą su 3 modul
 
 ### Mokymo Turinys
 - **3 moduliai**: Teorija → Testas → Praktika
-- **13 teorinių skaidrių** su apibrėžimais, promptų tipais ir 6 blokais
-- **10 testo klausimų** su paaiškinimais
-- **4 praktiniai verslo scenarijai**: E-commerce, Marketing, HR, SaaS
+- **18 teorinių skaidrių** su apibrėžimais, workflow, promptų tipais, technikomis, mąstymo modeliais ir 6 blokais
+- **12 testo klausimų** Modulyje 2 (sugrupuoti pagal temas) su paaiškinimais
+- **20 baigiamojo testo klausimų** (quiz) su paaiškinimais
+- **4 praktiniai verslo scenarijai**: E-commerce, Marketing, HR, SaaS (su žingsnis po žingsnio instrukcijomis)
 - **Promptų biblioteka** su kopijavimo funkcija
 
 ### Techninės Funkcijos
@@ -98,6 +99,8 @@ npm run test:ui
 - ✅ 21/21 progress.ts testai (100%)
 - ✅ 6/6 integration testai (100%)
 - ✅ 100% kritinių funkcionalumų test coverage
+
+**Dabartinė versija:** v2.3.0 (2026-02)
 
 ## 📦 Deployment ir GitHub Pages
 
@@ -180,28 +183,39 @@ prompt-anatomy-training/
 ## 📚 Modulių Struktūra
 
 ### Modulis 1: 6 Blokų Sistema (Teorija)
-13 skaidrių:
+18 skaidrių:
 1. Įvadas į Prompt Inžineriją
 2. Ką Reiškia "Promptas"? (apibrėžimai)
-3. Pagrindiniai Promptų Tipai (3 tipai)
-4. Hierarchinė Struktūra (6 blokų apžvalga)
-5-10. Kiekvienas iš 6 blokų detaliai
-11. Pilnas Prompt Pavyzdys
-12. Prieš vs Po palyginimas
-13. Santrauka
+3. Workflow Samprata (Basic vs Workflow)
+4. Pagrindiniai Promptų Tipai (3 tipai)
+5. Promptavimo Technikos (6 technikos)
+6. Gero Prompto Šablonas (META + INPUT + OUTPUT)
+7. Ko jau išmokome? (3→6 blokų perėjimas)
+8. Hierarchinė Struktūra (6 blokų apžvalga)
+9-14. Kiekvienas iš 6 blokų detaliai (Meta, Input, Output, Reasoning, Quality, Advanced)
+15. Mąstymo Modeliai (CoT vs ToT)
+16. Pilnas Prompt Pavyzdys
+17. Prieš vs Po palyginimas
+18. Modulio Santrauka (su workflow, technikomis, mąstymo modeliais)
 
 ### Modulis 2: Žinių Patikrinimas (Testas)
-- 10 klausimų apie 6 blokų sistemą
-- Klausimai sugrupuoti pagal blokus
+- 7 skaidrių (įvadas + 5 testo sekcijų + rezultatai)
+- 12 klausimų apie 6 blokų sistemą, workflow ir technikas
+- Klausimai sugrupuoti pagal temas (Meta, Input/Output, Reasoning/Quality, Advanced/Bendra, Workflow/Technikos)
 - Kiekvienas turi paaiškinimą
 - Rezultatai procentais
 
 ### Modulis 3: Praktinis Pritaikymas
-4 verslo scenarijai:
+6 skaidrių (įvadas + 4 scenarijai + santrauka):
 - 📊 Pardavimų Analizė (E-commerce)
 - 📈 Marketingo Planas (B2B)
 - 👥 HR Dokumentas (Darbuotojų apklausa)
 - 🚀 Produkto Aprašymas (SaaS)
+
+Kiekvienas scenarijus turi:
+- Žingsnis po žingsnio instrukcijas (6 žingsniai)
+- Tarpinius sprendimus kiekvienam blokui
+- Pilnus pavyzdinius sprendimus
 
 ## ⚙️ Konfigūracija
 
@@ -290,6 +304,18 @@ npm run build
 
 ## 📝 Changelog
 
+### v2.3.0 (2026-02) - 3 Modulio Patobulinimai: Instrukcijos ir Tarpiniai Sprendimai
+- ✅ **Instrukcijos su žingsniais** - Kiekvienas scenarijus turi 6 žingsnius (po vieną kiekvienam blokui)
+- ✅ **Tarpiniai sprendimai** - Kopijuojami sprendimai kiekvienam blokui
+- ✅ **Pavyzdiniai sprendimai** - Visi 4 scenarijai turi pilnus pavyzdžius
+- ✅ **UI patobulinimai** - Accordion su instrukcijomis, kopijavimo funkcijos
+- ✅ **Patobulinta Modulio 1 santrauka** - Pridėta workflow, technikos, mąstymo modeliai
+
+### v2.2.0 (2026-02) - Mąstymo Modelių Skaidrė ir Reasoning Bloko Patobulinimas
+- ✅ **Nauja skaidrė: Mąstymo Modeliai** - CoT (Chain of Thought) vs ToT (Tree of Thoughts)
+- ✅ **Reasoning bloko patobulinimas** - Lite versija, pilna struktūra, verslo pavyzdžiai
+- ✅ **Skaidrių numerių atnaujinimas** - 15 → 16 skaidrių Modulyje 1
+
 ### v2.1.0 (2026-02-02) - Techniniai Patobulinimai
 - ✅ **Error Boundary** - Globalus error handling su retry funkcija
 - ✅ **Loading States** - LoadingSpinner komponentas su Suspense
@@ -303,11 +329,13 @@ npm run build
 ### v2.0.0 (2026-02)
 - ✅ Pridėta skaidrė "Ką Reiškia Promptas?" su apibrėžimais
 - ✅ Pridėta skaidrė "Pagrindiniai Promptų Tipai" (sisteminiai, kontekstiniai, vaidmens)
+- ✅ Pridėta skaidrė "Workflow Samprata" (Basic vs Workflow)
+- ✅ Pridėta skaidrė "Promptavimo Technikos" (6 technikos)
 - ✅ Pakeista AI → DI (Dirbtinis Intelektas)
 - ✅ Pataisyta lietuvių kalbos gramatika
 - ✅ Atnaujinta spalvų schema (Navy/Gold)
 - ✅ Pridėta promptų biblioteka su instrukcijomis
-- ✅ 13 skaidrių vietoj 11 pirmame modulyje
+- ✅ 18 skaidrių Modulyje 1 (vietoj 11)
 
 ### v1.0.0
 - Pradinė versija su 3 moduliais

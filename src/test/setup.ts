@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom';
 import { cleanup } from '@testing-library/react';
-import { afterEach, vi, beforeEach } from 'vitest';
-import { JSDOM } from 'jsdom';
+import { afterEach, vi } from 'vitest';
 
 // Ensure localStorage is available (jsdom should provide it, but ensure it exists)
 const localStorageMock = (() => {
@@ -40,6 +39,7 @@ if (typeof window !== 'undefined') {
 }
 
 if (typeof global !== 'undefined') {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (global as any).localStorage = localStorageMock;
 }
 
@@ -68,6 +68,7 @@ Object.defineProperty(window, 'matchMedia', {
 });
 
 // Mock IntersectionObserver (used by some components)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 global.IntersectionObserver = class IntersectionObserver {
   constructor() {}
   disconnect() {}

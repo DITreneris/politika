@@ -1,10 +1,11 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { getProgress, saveProgress, resetProgress } from '../../utils/progress';
+import { getProgress, saveProgress, resetProgress, flushProgressSave } from '../../utils/progress';
 
 // Setup localStorage mock if not available
 const setupLocalStorage = () => {
   if (typeof localStorage === 'undefined') {
     const store: Record<string, string> = {};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (global as any).localStorage = {
       getItem: (key: string) => store[key] || null,
       setItem: (key: string, value: string) => {
@@ -59,6 +60,7 @@ describe('Progress Integration Tests', () => {
     };
     
     saveProgress(initialProgress);
+    flushProgressSave();
     
     // Load and verify
     const loaded = getProgress();
@@ -114,6 +116,7 @@ describe('Progress Integration Tests', () => {
       quizScore: null,
     };
     saveProgress(progress1);
+    flushProgressSave();
 
     // Update progress
     const progress2 = {
@@ -123,6 +126,7 @@ describe('Progress Integration Tests', () => {
       quizScore: 90,
     };
     saveProgress(progress2);
+    flushProgressSave();
 
     // Verify latest progress
     const saved = getProgress();
@@ -141,6 +145,7 @@ describe('Progress Integration Tests', () => {
       quizScore: null,
     };
     saveProgress(progress1);
+    flushProgressSave();
     
     const firstSave = JSON.parse(localStorage.getItem('prompt-anatomy-progress')!);
     const createdAt = firstSave.createdAt;
@@ -159,6 +164,7 @@ describe('Progress Integration Tests', () => {
       quizScore: null,
     };
     saveProgress(progress2);
+    flushProgressSave();
 
     const secondSave = JSON.parse(localStorage.getItem('prompt-anatomy-progress')!);
     
@@ -178,6 +184,7 @@ describe('Progress Integration Tests', () => {
       quizScore: 85,
     };
     saveProgress(progress);
+    flushProgressSave();
 
     // Reset
     resetProgress();

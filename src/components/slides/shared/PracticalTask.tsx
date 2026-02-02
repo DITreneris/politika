@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CheckCircle, Sparkles, ChevronDown, ChevronUp, Copy, Lightbulb } from 'lucide-react';
+import { CheckCircle, Sparkles, ChevronDown, ChevronUp, Lightbulb } from 'lucide-react';
 import { useAutoSave, loadAutoSave, clearAutoSave } from '../../../utils/useAutoSave';
 import { Progress } from '../../../utils/progress';
 import { PracticalTask as PracticalTaskType } from '../../../types/modules';

@@ -7,6 +7,7 @@ import { useAutoSave, loadAutoSave, clearAutoSave } from '../useAutoSave';
 const setupLocalStorage = () => {
   if (typeof localStorage === 'undefined') {
     const store: Record<string, string> = {};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (global as any).localStorage = {
       getItem: (key: string) => store[key] || null,
       setItem: (key: string, value: string) => {
@@ -32,6 +33,7 @@ const setupLocalStorage = () => {
 // Setup Storage prototype if not available
 const setupStorage = () => {
   if (typeof Storage === 'undefined') {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (global as any).Storage = class Storage {
       private store: Record<string, string> = {};
       getItem(key: string) { return this.store[key] || null; }

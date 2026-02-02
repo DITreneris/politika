@@ -4,6 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  root: '.', // Ensure we're in the project root
   test: {
     globals: true,
     environment: 'jsdom',
@@ -24,6 +25,13 @@ export default defineConfig({
       '**/Local Settings/**',
       '**/Desktop/**',
       '**/Local/**',
+      // Exclude anything outside project root
+      '**/../**',
+      // Exclude Cursor/VS Code extension directories
+      '**/.cursor/extensions/**',
+      '**/.vscode/extensions/**',
+      '**/AppData/Local/Programs/**',
+      '**/Local Settings/Programs/**',
     ],
     coverage: {
       provider: 'v8',

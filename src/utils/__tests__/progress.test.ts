@@ -7,6 +7,7 @@ import {
   validateProgress,
   isProgressV1,
   isProgressV2,
+  flushProgressSave,
   type Progress,
 } from '../progress';
 
@@ -14,6 +15,7 @@ import {
 const setupLocalStorage = () => {
   if (typeof localStorage === 'undefined') {
     const store: Record<string, string> = {};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (global as any).localStorage = {
       getItem: (key: string) => store[key] || null,
       setItem: (key: string, value: string) => {
@@ -157,6 +159,8 @@ describe('progress.ts', () => {
       };
       
       saveProgress(progress);
+      // Flush debounced save to ensure it's written immediately
+      flushProgressSave();
       
       const stored = localStorage.getItem('prompt-anatomy-progress');
       expect(stored).toBeTruthy();
@@ -179,6 +183,7 @@ describe('progress.ts', () => {
       };
       
       saveProgress(initialProgress);
+      flushProgressSave();
       const firstSave = JSON.parse(localStorage.getItem('prompt-anatomy-progress')!);
       const createdAt = firstSave.createdAt;
       
@@ -190,6 +195,7 @@ describe('progress.ts', () => {
       
       // Save again
       saveProgress({ ...initialProgress, completedModules: [1, 2] });
+      flushProgressSave();
       const secondSave = JSON.parse(localStorage.getItem('prompt-anatomy-progress')!);
       
       expect(secondSave.createdAt).toBe(createdAt);
@@ -209,6 +215,7 @@ describe('progress.ts', () => {
       };
       
       saveProgress(progress);
+      flushProgressSave();
       expect(localStorage.getItem('prompt-anatomy-progress')).toBeTruthy();
       
       resetProgress();

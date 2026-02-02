@@ -44,21 +44,13 @@ function ModulesPage({ onModuleSelect, progress }: ModulesPageProps) {
   // Get modules data (synchronously if already loaded)
   const modules = getModulesSync();
 
-  // Show loading if modules not yet loaded
-  if (!modules) {
-    return (
-      <div className="flex justify-center items-center min-h-[400px]">
-        <LoadingSpinner size="lg" text="Kraunama..." />
-      </div>
-    );
-  }
-
-  // Memoize completed count and total modules
+  // Memoize completed count and total modules (hooks must be called before early return)
   const completedCount = useMemo(() => progress.completedModules.length, [progress.completedModules.length]);
-  const totalModules = useMemo(() => modules.length, [modules.length]);
+  const totalModules = useMemo(() => modules?.length ?? 0, [modules?.length]);
 
   // Memoize module progress calculations
   const moduleProgressMap = useMemo(() => {
+    if (!modules) return new Map<number, number>();
     const map = new Map<number, number>();
     modules.forEach(module => {
       const completedTasks = progress.completedTasks[module.id]?.length || 0;
@@ -78,10 +70,11 @@ function ModulesPage({ onModuleSelect, progress }: ModulesPageProps) {
       }
     });
     return map;
-  }, [progress.completedTasks, progress.completedModules]);
+  }, [progress.completedTasks, progress.completedModules, modules]);
 
   // Memoize locked modules
   const lockedModules = useMemo(() => {
+    if (!modules) return new Set<number>();
     const locked = new Set<number>();
     modules.forEach((module, index) => {
       if (index === 0) return;
@@ -92,6 +85,15 @@ function ModulesPage({ onModuleSelect, progress }: ModulesPageProps) {
     });
     return locked;
   }, [progress.completedModules, modules]);
+
+  // Show loading if modules not yet loaded
+  if (!modules) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <LoadingSpinner size="lg" text="Kraunama..." />
+      </div>
+    );
+  }
 
   // Helper functions (moved outside to avoid recreation)
   const getModuleProgress = (moduleId: number) => {

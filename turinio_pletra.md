@@ -480,10 +480,68 @@ ADVANCED: Temperature: [0.2–0.7]. Reasoning: [normal/extended].
 - Struktūruotas promptas (85% tikslumas)
 - Rezultatų palyginimas
 
-### Skaidrė 16: Santrauka
-- 6 pagrindiniai blokai
-- Pagrindinės idėjos
-- Kiti žingsniai
+### Skaidrė 16: Modulio Santrauka
+
+**Tikslas:** Apibendrinti visą Modulio 1 turinį ir motyvuoti pereiti prie Modulio 2.
+
+**UI Struktūra:**
+
+1. **Įvado blokas** (emerald/brand gradient)
+   - Pavadinimas: "🎉 Ką išmokote"
+   - Tekstas: "Sveikiname! Dabar žinote, kaip profesionaliai struktūruoti promptus naudojant 6 blokų sistemą, workflow sampratą ir promptavimo technikas."
+
+2. **6 Pagrindiniai Blokai** (brand spalva, 2 stulpelių grid)
+   - 1. **Meta** - rolė, kontekstas ir tikslas (kas esate ir ką darote)
+   - 2. **Input** - duomenys, faktai ir apribojimai (ką turite)
+   - 3. **Output** - formatas, struktūra ir tonas (ko norite)
+   - 4. **Reasoning** - mąstymo struktūra (CoT arba ToT)
+   - 5. **Quality** - kokybės kriterijai (kaip patikrinti)
+   - 6. **Advanced** - parametrai (Temperature, Reasoning depth)
+
+3. **Workflow ir Technikos** (2 stulpelių grid)
+   - **Workflow Samprata** (violet spalva):
+     - Basic naudojimas - Pokalbiams, idėjoms, diskusijoms. Ribota kontrolė.
+     - Workflow naudojimas - Dokumentams, procesams. Aiškus formatas ir rezultatas.
+   - **Promptavimo Technikos** (amber spalva):
+     - Zero-shot - be pavyzdžių
+     - Few-shots - su pavyzdžiais
+     - Minčių grandinė - žingsniais
+     - Promptų seka - rezultatų grandinimas
+     - Instruktavimas - formatas, tonas
+     - Manipuliacija - ko vengti
+
+4. **Mąstymo Modeliai ir 3→6 Blokų Perėjimas** (2 stulpelių grid)
+   - **Mąstymo Modeliai** (cyan spalva):
+     - CoT (Chain of Thought) - Viena loginė seka. Tinka analizėms, skaičiavimams.
+     - ToT (Tree of Thoughts) - Kelios alternatyvos. Tinka strategijai, kūrybai.
+   - **Nuo 3 iki 6 Blokų** (rose spalva):
+     - 3 blokai (Meta + Input + Output) = aiški užduotis
+     - 6 blokai (+ Reasoning + Quality + Advanced) = aiški + nuspėjama + patikrinama
+     - Pastaba: "Sudėtingoms užduotims reikia ne tik aiškumo, bet ir validavimo."
+
+5. **Pagrindinės Idėjos** (emerald spalva, 2 stulpelių grid)
+   - Hierarchija yra kritinė (nuo svarbiausio)
+   - Konkretumas > bendrumas (tikslūs skaičiai)
+   - Pavyzdžiai pagerina rezultatus (Few-shots)
+   - Kokybės kontrolė būtina (Quality blokas)
+   - Workflow > Basic (procesams)
+   - Mąstymo modeliai svarbūs (CoT/ToT pasirinkimas)
+
+6. **Motyvacija pereiti prie Modulio 2** (violet/brand gradient)
+   - Pavadinimas: "🎯 Kitas Žingsnis:"
+   - Tekstas: "Dabar, kai išmokote 6 blokų sistemą, workflow ir technikas, laikas patikrinti savo žinias!"
+   - Info blokas: "→ Pereikite prie Modulio 2: 'Žinių Patikrinimas'"
+   - Paaiškinimas: "Teste patikrinsite, ar supratote kiekvieną bloką, workflow ir technikas. Kiekvienas klausimas turi paaiškinimą, todėl tai yra ir mokymosi galimybė."
+
+7. **Galutinė Motyvacija** (brand/accent gradient, baltas tekstas)
+   - Pavadinimas: "Sėkmės su DI! 🚀"
+   - Tekstas: "Struktūruoti promptai = nuspėjami rezultatai = didesnis efektyvumas"
+
+**Vizualiniai Elementai:**
+- Spalvų kodavimas: brand (blokai), violet (workflow), amber (technikos), cyan (mąstymo modeliai), rose (3→6 perėjimas), emerald (idėjos)
+- Responsive dizainas: grid layout su 1-2 stulpeliais
+- Dark mode palaikymas: visi elementai turi dark variantus
+- CheckCircle ikonos pagrindinėse idėjose
 
 ---
 

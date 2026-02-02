@@ -48,23 +48,13 @@ function ModuleView({
     [moduleIndex, modules?.length]
   );
 
-  // Show loading if modules not yet loaded or module not found
-  if (!modules || !module) {
-    return (
-      <div className="flex justify-center items-center min-h-[400px]">
-        <LoadingSpinner size="lg" text="Kraunama..." />
-      </div>
-    );
-  }
-
   const isModuleCompleted = useMemo(() => 
     progress.completedModules.includes(moduleId),
     [progress.completedModules, moduleId]
   );
 
-  if (!module) return null;
-
   const nextSlide = useCallback(() => {
+    if (!module) return;
     if (currentSlide < module.slides.length - 1) {
       setCurrentSlide(currentSlide + 1);
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -75,7 +65,7 @@ function ModuleView({
       }
       setShowModuleComplete(true);
     }
-  }, [currentSlide, module.slides.length, progress.completedModules, moduleId, onComplete]);
+  }, [currentSlide, module, progress.completedModules, moduleId, onComplete]);
 
   const prevSlide = useCallback(() => {
     if (currentSlide > 0) {
@@ -83,6 +73,33 @@ function ModuleView({
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [currentSlide]);
+
+  const handleTaskComplete = useCallback((taskId: number) => {
+    if (!progress.completedTasks[moduleId]?.includes(taskId)) {
+      onTaskComplete(moduleId, taskId);
+    }
+  }, [progress.completedTasks, moduleId, onTaskComplete]);
+
+  // Memoize current slide data and related calculations (only if module exists)
+  const currentSlideData = useMemo(() => 
+    module?.slides[currentSlide],
+    [module, currentSlide]
+  );
+
+  const isLastSlide = useMemo(() => 
+    currentSlide === (module?.slides.length ?? 0) - 1,
+    [currentSlide, module]
+  );
+
+  const isFirstSlide = useMemo(() => 
+    currentSlide === 0,
+    [currentSlide]
+  );
+
+  const slideProgress = useMemo(() => 
+    module ? ((currentSlide + 1) / module.slides.length) * 100 : 0,
+    [currentSlide, module]
+  );
 
   // Reset state when module changes
   useEffect(() => {
@@ -137,32 +154,14 @@ function ModuleView({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [nextSlide, prevSlide, onBack, showModuleComplete]);
 
-  const handleTaskComplete = useCallback((taskId: number) => {
-    if (!progress.completedTasks[moduleId]?.includes(taskId)) {
-      onTaskComplete(moduleId, taskId);
-    }
-  }, [progress.completedTasks, moduleId, onTaskComplete]);
-
-  // Memoize current slide data and related calculations
-  const currentSlideData = useMemo(() => 
-    module.slides[currentSlide],
-    [module.slides, currentSlide]
-  );
-
-  const isLastSlide = useMemo(() => 
-    currentSlide === module.slides.length - 1,
-    [currentSlide, module.slides.length]
-  );
-
-  const isFirstSlide = useMemo(() => 
-    currentSlide === 0,
-    [currentSlide]
-  );
-
-  const slideProgress = useMemo(() => 
-    ((currentSlide + 1) / module.slides.length) * 100,
-    [currentSlide, module.slides.length]
-  );
+  // Show loading if modules not yet loaded or module not found
+  if (!modules || !module) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <LoadingSpinner size="lg" text="Kraunama..." />
+      </div>
+    );
+  }
 
   // Module complete screen
   if (showModuleComplete) {
