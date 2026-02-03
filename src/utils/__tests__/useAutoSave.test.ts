@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
 import { useAutoSave, loadAutoSave, clearAutoSave } from '../useAutoSave';
 
@@ -73,7 +73,7 @@ describe('useAutoSave', () => {
   });
 
   describe('useAutoSave hook', () => {
-    it('should save value to localStorage after delay', async () => {
+    it('should save value to localStorage after delay', () => {
       const { unmount } = render(
         React.createElement(TestComponent, { storageKey: 'test-key', value: 'test-value', delay: 1000 })
       );
@@ -83,14 +83,13 @@ describe('useAutoSave', () => {
       // Fast-forward time
       vi.advanceTimersByTime(1000);
 
-      await waitFor(() => {
-        expect(localStorage.getItem('test-key')).toBe(JSON.stringify('test-value'));
-      });
+      // With fake timers, the effect should have run synchronously
+      expect(localStorage.getItem('test-key')).toBe(JSON.stringify('test-value'));
 
       unmount();
     });
 
-    it('should debounce saves (only save once for rapid changes)', async () => {
+    it('should debounce saves (only save once for rapid changes)', () => {
       const { rerender, unmount } = render(
         React.createElement(TestComponent, { storageKey: 'test-key', value: 'value1', delay: 1000 })
       );
@@ -103,52 +102,44 @@ describe('useAutoSave', () => {
       // Fast-forward time
       vi.advanceTimersByTime(1000);
 
-      await waitFor(() => {
-        // Should only save the last value
-        expect(localStorage.getItem('test-key')).toBe(JSON.stringify('value4'));
-      });
+      // Should only save the last value
+      expect(localStorage.getItem('test-key')).toBe(JSON.stringify('value4'));
 
       unmount();
     });
 
-    it('should not save undefined values', async () => {
+    it('should not save undefined values', () => {
       const { unmount } = render(
         React.createElement(TestComponent, { storageKey: 'test-key', value: undefined, delay: 1000 })
       );
 
       vi.advanceTimersByTime(1000);
 
-      await waitFor(() => {
-        expect(localStorage.getItem('test-key')).toBeNull();
-      });
+      expect(localStorage.getItem('test-key')).toBeNull();
 
       unmount();
     });
 
-    it('should not save null values', async () => {
+    it('should not save null values', () => {
       const { unmount } = render(
         React.createElement(TestComponent, { storageKey: 'test-key', value: null, delay: 1000 })
       );
 
       vi.advanceTimersByTime(1000);
 
-      await waitFor(() => {
-        expect(localStorage.getItem('test-key')).toBeNull();
-      });
+      expect(localStorage.getItem('test-key')).toBeNull();
 
       unmount();
     });
 
-    it('should not save empty string values', async () => {
+    it('should not save empty string values', () => {
       const { unmount } = render(
         React.createElement(TestComponent, { storageKey: 'test-key', value: '', delay: 1000 })
       );
 
       vi.advanceTimersByTime(1000);
 
-      await waitFor(() => {
-        expect(localStorage.getItem('test-key')).toBeNull();
-      });
+      expect(localStorage.getItem('test-key')).toBeNull();
 
       unmount();
     });
@@ -166,10 +157,10 @@ describe('useAutoSave', () => {
       expect(localStorage.getItem('test-key')).toBeNull();
     });
 
-    it('should handle localStorage errors gracefully', async () => {
+    it('should handle localStorage errors gracefully', () => {
       // Mock localStorage.setItem to throw error
-      const originalSetItem = Storage.prototype.setItem;
-      const setItemSpy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      const originalSetItem = localStorage.setItem;
+      localStorage.setItem = vi.fn(() => {
         throw new Error('Quota exceeded');
       });
 
@@ -180,13 +171,11 @@ describe('useAutoSave', () => {
       vi.advanceTimersByTime(1000);
 
       // Should not throw, just log warning
-      await waitFor(() => {
-        expect(console.warn).toHaveBeenCalled();
-      }, { timeout: 2000 });
+      // With fake timers, this should happen synchronously
+      expect(console.warn).toHaveBeenCalled();
 
       // Restore
-      setItemSpy.mockRestore();
-      Storage.prototype.setItem = originalSetItem;
+      localStorage.setItem = originalSetItem;
       unmount();
     });
   });
