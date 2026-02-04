@@ -2,6 +2,7 @@ import { Target, BookOpen, ClipboardCheck, ArrowRight, Sparkles, Zap, CheckCircl
 import { Progress } from '../utils/progress';
 import PromptLibrary from './PromptLibrary';
 import CircularProgress from './CircularProgress';
+import appConfig from '../data/appConfig.json';
 
 interface HomePageProps {
   onStart: () => void;
@@ -30,7 +31,7 @@ export default function HomePage({ onStart, progress }: HomePageProps) {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-100 dark:bg-brand-900/30 rounded-full text-brand-700 dark:text-brand-300 text-sm font-medium mb-6 animate-bounce-in">
             <Sparkles className="w-4 h-4" />
-            <span>DI Prompt Inžinerijos Mokymas</span>
+            <span>{appConfig.homeBadgeText}</span>
           </div>
           
           {/* Main icon */}
@@ -48,7 +49,7 @@ export default function HomePage({ onStart, progress }: HomePageProps) {
           
           {/* Title */}
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
-            Promptų <span className="gradient-text">anatomija</span>
+            DI <span className="gradient-text">{appConfig.appNameEmphasis}</span>
           </h1>
           
           {/* Subtitle */}

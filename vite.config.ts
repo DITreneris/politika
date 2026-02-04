@@ -4,7 +4,9 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: process.env.NODE_ENV === 'production' ? '/anatomija/' : '/',
+  // GitHub Pages deploy'inant į repo sub-path, base turi sutapti su repo pavadinimu.
+  // Jei keisite repo pavadinimą, atnaujinkite šią reikšmę.
+  base: process.env.NODE_ENV === 'production' ? '/politika/' : '/',
   server: {
     port: 3000,
     host: '0.0.0.0',

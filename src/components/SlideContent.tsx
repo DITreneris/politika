@@ -1457,10 +1457,10 @@ function QualityBlockSlide({ onRenderTask }: { onRenderTask: () => JSX.Element |
         </div>
       </div>
 
-      {/* Susiejimas su Promptų anatomija */}
+      {/* Susiejimas su bendra sistema */}
       <div className="bg-gradient-to-r from-emerald-50 to-brand-50 dark:from-emerald-900/20 dark:to-brand-900/20 p-6 rounded-xl border-2 border-emerald-300 dark:border-emerald-700">
         <h4 className="font-bold mb-3 text-gray-900 dark:text-white">
-          🔗 Kaip tai susijungia su visa Promptų anatomija?
+          🔗 Kaip tai susijungia su visa sistema?
         </h4>
         <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
           <strong>Quality Control yra saugos diržas</strong>, kuris kompensuoja:

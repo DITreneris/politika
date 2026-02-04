@@ -1,7 +1,7 @@
 {
-  "name": "prompt-anatomy-training",
+  "name": "politika",
   "version": "1.0.0",
-  "description": "Interaktyvus mokymas apie prompt struktūrą su 3 moduliais, praktinėmis užduotimis ir apklausa",
+  "description": "Interaktyvus mokymas apie DI politiką su moduliais, praktinėmis užduotimis ir testais",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -56,12 +56,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DITreneris/anatomija.git"
+    "url": "https://github.com/DITreneris/politika.git"
   },
   "bugs": {
-    "url": "https://github.com/DITreneris/anatomija/issues"
+    "url": "https://github.com/DITreneris/politika/issues"
   },
-  "homepage": "https://ditreneris.github.io/anatomija/",
+  "homepage": "https://ditreneris.github.io/politika/",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"

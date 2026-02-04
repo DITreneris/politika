@@ -1,6 +1,6 @@
-# Promptų anatomija - Interaktyvus DI Mokymas
+# DI politika - Interaktyvus mokymas
 
-Interaktyvus mokymas apie DI (dirbtinio intelekto) prompt struktūrą su 3 moduliais, praktinėmis užduotimis ir testais. Orientuotas į verslo problemų sprendimą.
+Interaktyvus mokymas apie DI politiką su moduliais, praktinėmis užduotimis ir testais.
 
 ## 🎯 Apie projektą
 
@@ -33,8 +33,8 @@ Mokymo kursas, kuris moko kurti efektyvius DI promptus naudojant **6 blokų sist
 ### Instaliacija
 
 ```bash
-git clone https://github.com/DITreneris/anatomija.git
-cd anatomija
+git clone https://github.com/DITreneris/politika.git
+cd politika
 npm install
 npm run dev
 ```
@@ -97,9 +97,9 @@ colors: {
 2. Source: pasirinkite "GitHub Actions"
 3. Push į `main` automatiškai deployina
 
-Prieiga: `https://ditreneris.github.io/anatomija/`
+Prieiga: `https://ditreneris.github.io/politika/`
 
-**Pastaba:** `vite.config.ts` naudoja base path `/anatomija/`. Jei keičiate repo pavadinimą, atnaujinkite base.
+**Pastaba:** `vite.config.ts` naudoja base path `/politika/`. Jei keičiate repo pavadinimą, atnaujinkite base.
 
 ### Kiti variantai
 

@@ -5,6 +5,7 @@ import { ErrorBoundary, LoadingSpinner } from './components/ui';
 import { getProgress, saveProgress, flushProgressSave } from './utils/progress';
 import { loadModules, getModulesDataSync, preloadModules } from './data/modulesLoader';
 import type { ModulesData } from './types/modules';
+import appConfig from './data/appConfig.json';
 
 // Lazy load heavy components for better initial load
 const HomePage = lazy(() => import('./components/HomePage'));
@@ -172,7 +173,8 @@ function App() {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                Promptų <span className="gradient-text">anatomija</span>
+                {appConfig.navTitlePrefix}{' '}
+                <span className="gradient-text">{appConfig.navTitleEmphasis}</span>
               </h1>
             </div>
             
@@ -403,13 +405,13 @@ function App() {
               <div className="bg-gradient-to-r from-brand-500 to-accent-500 p-1.5 rounded-lg">
                 <Sparkles className="w-3.5 h-3.5 text-white" />
               </div>
-              <span className="font-medium text-gray-700 dark:text-gray-300">Promptų anatomija</span>
+              <span className="font-medium text-gray-700 dark:text-gray-300">{appConfig.footerTitle}</span>
             </div>
             <div className="text-center">
               <span>© 2024-2026 </span>
-              <span className="font-medium text-gray-700 dark:text-gray-300">Tomas Staniulis</span>
+              <span className="font-medium text-gray-700 dark:text-gray-300">{appConfig.footerAuthor}</span>
               <span className="mx-2">•</span>
-              <span>Autorinė mokymo medžiaga</span>
+              <span>{appConfig.footerTagline}</span>
             </div>
             <div className="flex items-center gap-4">
               <a 
