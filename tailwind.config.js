@@ -41,32 +41,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        // EU blue - trust, governance, institutional clarity
+        // Business blue - trust, clarity, professionalism
         brand: {
           50: '#eef6ff',
           100: '#d9ecff',
           200: '#b8dcff',
           300: '#86c4ff',
           400: '#4ba3ff',
-          500: '#1f7aff',
-          600: '#145fe6',
-          700: '#114bba',
-          800: '#123f96',
-          900: '#133877',
+          500: '#2563eb',
+          600: '#1d4ed8',
+          700: '#1e40af',
+          800: '#1e3a8a',
+          900: '#172554',
           950: '#0b214b',
         },
-        // EU yellow - accent for highlights, CTAs and status
+        // Warm accent (amber) - highlights, CTAs, status
         accent: {
           50: '#fffbea',
           100: '#fff3c4',
           200: '#ffe58a',
           300: '#ffd24d',
           400: '#ffbe1a',
-          500: '#f2a900',
-          600: '#d98a00',
-          700: '#b36a00',
-          800: '#8f5200',
-          900: '#754300',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
           950: '#432500',
         },
         // Slate for neutral UI elements
