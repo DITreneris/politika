@@ -8,6 +8,15 @@
   "footerTitle": "DI politika",
   "footerAuthor": "Tomas Staniulis",
   "footerTagline": "Autorinė mokymo medžiaga",
-  "homeBadgeText": "DI politikos mokymas"
+  "homeBadgeText": "DI aktas jau galioja — ar jūs pasiruošę?",
+  "homeHeroTitlePrefix": "DI Politika,",
+  "homeHeroTitleEmphasis": "kuri veikia",
+  "homeHeroSubtitle": "Per 90 minučių: aiškios DI naudojimo taisyklės, rizikų ir atsakomybės ribos, paruoštas DI politikos V0.1 juodraštis.",
+  "homeHeroBullets": [
+    "aiškios DI naudojimo taisyklės darbuotojams",
+    "rizikų ir atsakomybės ribos pagal ES DI aktą",
+    "paruoštas DI politikos V0.1 juodraštis"
+  ],
+  "homeDurationLabel": "~90 min."
 }
 

@@ -49,19 +49,23 @@ export default function HomePage({ onStart, progress }: HomePageProps) {
           
           {/* Title */}
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
-            DI <span className="gradient-text">{appConfig.appNameEmphasis}</span>
+            {appConfig.homeHeroTitlePrefix}{' '}
+            <span className="gradient-text">{appConfig.homeHeroTitleEmphasis}</span>
           </h1>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4 max-w-2xl mx-auto leading-relaxed">
-            Išmokite kurti efektyvius DI promptus su{' '}
-            <span className="font-semibold text-brand-600 dark:text-brand-400">6 blokų sistema</span>
+            {appConfig.homeHeroSubtitle}
           </p>
           
-          <p className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-xl mx-auto">
-            Orientuota į verslo problemų sprendimą. 
-            <span className="font-medium"> ~45 min.</span>
-          </p>
+          <div className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-xl mx-auto space-y-2">
+            <p className="font-medium">{appConfig.homeDurationLabel}</p>
+            <ul className="text-left list-disc list-inside space-y-1">
+              {appConfig.homeHeroBullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
           
           {/* Trust indicators */}
           <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm text-gray-600 dark:text-gray-400">
