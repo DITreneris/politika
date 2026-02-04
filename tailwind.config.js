@@ -41,33 +41,33 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Navy blue - trust, expertise, professionalism (like consulting firms)
+        // EU blue - trust, governance, institutional clarity
         brand: {
-          50: '#f0f4f8',
-          100: '#d9e2ec',
-          200: '#bcccdc',
-          300: '#9fb3c8',
-          400: '#829ab1',
-          500: '#627d98',
-          600: '#486581',
-          700: '#334e68',
-          800: '#243b53',
-          900: '#102a43',
-          950: '#0a1929',
+          50: '#eef6ff',
+          100: '#d9ecff',
+          200: '#b8dcff',
+          300: '#86c4ff',
+          400: '#4ba3ff',
+          500: '#1f7aff',
+          600: '#145fe6',
+          700: '#114bba',
+          800: '#123f96',
+          900: '#133877',
+          950: '#0b214b',
         },
-        // Gold - achievement, premium, success (like business awards)
+        // EU yellow - accent for highlights, CTAs and status
         accent: {
-          50: '#fdfaf3',
-          100: '#faf0d7',
-          200: '#f5e1ae',
-          300: '#efd07c',
-          400: '#e6bc4a',
-          500: '#d4a520',
-          600: '#b8860b',
-          700: '#966d09',
-          800: '#7a5807',
-          900: '#644806',
-          950: '#3d2c04',
+          50: '#fffbea',
+          100: '#fff3c4',
+          200: '#ffe58a',
+          300: '#ffd24d',
+          400: '#ffbe1a',
+          500: '#f2a900',
+          600: '#d98a00',
+          700: '#b36a00',
+          800: '#8f5200',
+          900: '#754300',
+          950: '#432500',
         },
         // Slate for neutral UI elements
         slate: {
